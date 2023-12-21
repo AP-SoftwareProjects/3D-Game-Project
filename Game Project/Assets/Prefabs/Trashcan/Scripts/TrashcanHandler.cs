@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class TrashcanHandler : MonoBehaviour
 {
-    public float detectionRadius = 5f; // Adjust this radius as needed
-    public LayerMask playerLayer; // Assign the player's layer in the Unity editor
-    public LayerMask objectLayer; // Assign the player's layer in the Unity editor
-    public KeyCode interactionKey = KeyCode.E; // Define the interaction key
-    private bool playerInRange;
+    public LayerMask playerLayer;
+    public LayerMask objectLayer;
+    public KeyCode interactionKey = KeyCode.E;
+    public Camera camera;
+    public Canvas tagObject;
+    public GameObject focusObject;
+    public int tagDisplayRange = 5;
 
-    private void Update()
+    private bool _lookingAtTrashcan = false;
+
+    void Update()
     {
         CheckPlayerInRange();
 
-        if (playerInRange && Input.GetKeyDown(interactionKey))
+        if (_lookingAtTrashcan && Input.GetKeyDown(interactionKey))
         {
             InteractWithTrashcan();
         }
@@ -22,45 +26,37 @@ public class TrashcanHandler : MonoBehaviour
 
     private void CheckPlayerInRange()
     {
-        // Check if the player is within the detection radius
-        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
-        playerInRange = colliders.Length > 0;
-
-        // Check if the player is looking at the trash can using a raycast
-        if (playerInRange)
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, objectLayer))
-            {
-                Debug.Log(hit.transform.name);
-                // Check if the hit object is the trash can
-                if (hit.collider.gameObject == gameObject)
-                {
-                    playerInRange = true;
-                }
-                else
-                {
-                    playerInRange = false;
-                }
-            }
-            else
-            {
-                playerInRange = false;
-            }
+            _lookingAtTrashcan = hit.collider.gameObject.layer == LayerMask.NameToLayer("Trashcan");
+        }
+
+        if (Vector3.Distance(focusObject.transform.position, transform.position) < tagDisplayRange)
+        {
+            Vector3 directionToTarget = focusObject.transform.position - transform.position;
+            Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget, Vector3.up);
+
+            rotationToTarget *= Quaternion.Euler(0f, 180f, 0f);
+            tagObject.transform.rotation = rotationToTarget;
+
+            tagObject.gameObject.SetActive(true);
+        }
+        else
+        {
+            tagObject.gameObject.SetActive(false);
         }
     }
 
     private void InteractWithTrashcan()
     {
-        // Perform interaction logic here
         Debug.Log("Player pressed '" + interactionKey + "' while looking at the trash can.");
     }
 
     private void OnDrawGizmosSelected()
     {
-        // Draw a wire sphere in the scene view to visualize the detection radius
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        Gizmos.DrawWireSphere(transform.position, tagDisplayRange);
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1441802277448484183}
   - component: {fileID: 7282421913929359294}
   - component: {fileID: 1351076250393527180}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pCylinder10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4054900168856730699}
   - component: {fileID: 5751778621974177249}
   - component: {fileID: 2456609494874067836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4460283840406169626}
   - component: {fileID: 1802556519929336330}
   - component: {fileID: 5511557694924168936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 6318749064507724043}
   - component: {fileID: 2135581015852909719}
   - component: {fileID: 3188532524240696618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 366646290534581776}
   - component: {fileID: 1289201690962242617}
   - component: {fileID: 3509098613641749848}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 7709846568320218083}
   - component: {fileID: 7424272068514381322}
   - component: {fileID: 4774025973965717076}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 3816273783007386840}
   - component: {fileID: 1559422039215124231}
   - component: {fileID: 1954760616612321164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 1440852295299104707}
   - component: {fileID: 2680308117581681820}
   - component: {fileID: 5866791105873452900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 29618643620194280}
   - component: {fileID: 8148343943367355211}
   - component: {fileID: 5040247021505390599}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 7945830521239474242}
   - component: {fileID: 4244482620354015183}
   - component: {fileID: 4400616548106820367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 7795407699683431536}
   - component: {fileID: 3772224513621686222}
   - component: {fileID: 1807284281748409980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 9214241350834430522}
   - component: {fileID: 6160068426261856923}
   - component: {fileID: 2328848412093574920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 6303276235386612271}
   - component: {fileID: 7618453567552338326}
   - component: {fileID: 6756030824165545912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 2566815318526406450}
   - component: {fileID: 8138352891433323098}
   - component: {fileID: 2606059406520912689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: polySurface12_trash_LP_UV_module3:pCylinder3polySurface6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,7 +1171,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8606009855479923708}
-  m_Layer: 0
+  - component: {fileID: 6091546491805792014}
+  - component: {fileID: 4727968481626706424}
+  m_Layer: 7
   m_Name: trash_can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,6 +1219,49 @@ Transform:
   - {fileID: 7945830521239474242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6091546491805792014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7597964180520646025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31af2374ee2a6ec469b8c8f393c23ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 2.85
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  interactionKey: 101
+--- !u!136 &4727968481626706424
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7597964180520646025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.47
+  m_Height: 5.67
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.61, z: 0}
 --- !u!1 &7707850092425894052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1273,7 @@ GameObject:
   - component: {fileID: 4384501657181630662}
   - component: {fileID: 2668883474138988444}
   - component: {fileID: 7304272991169747960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1356,7 @@ GameObject:
   - component: {fileID: 6174709488073458203}
   - component: {fileID: 5173080387073894802}
   - component: {fileID: 6933971372714047167}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1439,7 @@ GameObject:
   - component: {fileID: 8203313922929615715}
   - component: {fileID: 5222647836016627249}
   - component: {fileID: 965533164542303992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +1522,7 @@ GameObject:
   - component: {fileID: 2180224464397536350}
   - component: {fileID: 5739583189055110005}
   - component: {fileID: 2668512932806653020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1605,7 @@ GameObject:
   - component: {fileID: 6307796241006419681}
   - component: {fileID: 2652346176682184916}
   - component: {fileID: 1966885691657404867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1643,7 +1688,7 @@ GameObject:
   - component: {fileID: 8911270273247460867}
   - component: {fileID: 2108397693471018410}
   - component: {fileID: 3320866894847425727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1726,7 +1771,7 @@ GameObject:
   - component: {fileID: 9120572646171775242}
   - component: {fileID: 6609675880839840012}
   - component: {fileID: 4995888361201570463}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,7 +1854,7 @@ GameObject:
   - component: {fileID: 5824593337074584791}
   - component: {fileID: 2064861307601346405}
   - component: {fileID: 3949024956945954300}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,7 +1937,7 @@ GameObject:
   - component: {fileID: 6851193981179015886}
   - component: {fileID: 3469652495323043262}
   - component: {fileID: 4615037271589737343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,7 +2020,7 @@ GameObject:
   - component: {fileID: 3632120095938020229}
   - component: {fileID: 4547295990533775213}
   - component: {fileID: 5852292635264665901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trash_LP_UV_module3:pCylinder3polySurface6_polySurface6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
