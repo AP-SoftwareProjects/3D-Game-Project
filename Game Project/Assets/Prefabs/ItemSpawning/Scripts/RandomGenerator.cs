@@ -8,14 +8,16 @@ public class RandomGenerator : MonoBehaviour
     public int maxSpawnCount;
     private int currentSpawnCount = 0;
 
-    public Vector3 center;
-    public Vector3 size;
+    private Vector3 center;
+    private Vector3 size;
 
     // Use this for initialization
     void Start()
     {
         SpawnGarbage();
         currentSpawnCount++;
+        center = gameObject.transform.localPosition;
+        size = gameObject.transform.localPosition;
     }
 
     private float nextActionTime = 0.0f;
@@ -43,7 +45,7 @@ public class RandomGenerator : MonoBehaviour
     }
 
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 0, 0, 0.5f);
         Gizmos.DrawCube(center, size);
