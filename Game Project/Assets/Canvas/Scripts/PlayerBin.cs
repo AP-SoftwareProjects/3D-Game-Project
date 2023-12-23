@@ -1,11 +1,11 @@
+using System.Collections.Generic;
+
 public class PlayerBin
 {
     public int Amount { get; private set; } = 0;
-    public BIN_TYPES BinType;
-    public PlayerBin(BIN_TYPES binType)
-    {
-        BinType = binType;
-    }
+    public float Price { get; set; }
+    public List<TrashItem> Trash { get; set; }
+
 
     public int AddAmount(int amount) => this.Amount += amount;
     public int SubtractAmount(int amount) => this.Amount -= amount;
@@ -13,9 +13,3 @@ public class PlayerBin
 
 }
 
-public enum BIN_TYPES
-{
-    RED,
-    ORANGE,
-    GREEN
-}
