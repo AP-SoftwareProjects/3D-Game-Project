@@ -111505,6 +111505,12 @@ PrefabInstance:
       objectReference: {fileID: 712920470}
     - target: {fileID: 6091546491805792014, guid: d5dd5eb6205be8d40b2ae21e846ec8f9,
         type: 3}
+      propertyPath: particlePrefab
+      value: 
+      objectReference: {fileID: 3520674025310094113, guid: 4808ac9bc5d23d44aa08f8ea631943bd,
+        type: 3}
+    - target: {fileID: 6091546491805792014, guid: d5dd5eb6205be8d40b2ae21e846ec8f9,
+        type: 3}
       propertyPath: tagDisplayRange
       value: 5
       objectReference: {fileID: 0}

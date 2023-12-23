@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashcanHandler : MonoBehaviour
@@ -11,6 +9,8 @@ public class TrashcanHandler : MonoBehaviour
     public Canvas tagObject;
     public GameObject focusObject;
     public int tagDisplayRange = 5;
+
+    public ParticleSystem particlePrefab;
 
     private bool _lookingAtTrashcan = false;
 
@@ -51,7 +51,20 @@ public class TrashcanHandler : MonoBehaviour
 
     private void InteractWithTrashcan()
     {
-        Debug.Log("Player pressed '" + interactionKey + "' while looking at the trash can.");
+        if (GameManager.Instance.TrashItems.Count <= 0) return;
+
+        for (int i = 0; i < GameManager.Instance.TrashItems.Count; i++)
+        {
+            TrashItem trashItem = GameManager.Instance.TrashItems[i];
+            GameManager.Instance.PlayerBalance.AddCoins(trashItem.Price);
+        }
+        GameManager.Instance.TrashItems.Clear();
+
+        Vector3 spawnPosition = transform.position + new Vector3(0, 1.5f, 0);
+        Quaternion spawnRotation = Quaternion.Euler(-90f, 0f, 0f);
+
+        ParticleSystem spawnedParticles = Instantiate(particlePrefab, spawnPosition, spawnRotation, transform);
+        spawnedParticles.transform.SetParent(transform);
     }
 
     private void OnDrawGizmosSelected()
