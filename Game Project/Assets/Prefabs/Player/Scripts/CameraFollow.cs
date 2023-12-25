@@ -7,10 +7,10 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public float smoothSpeed = 18f;
     public float rotationSpeed = 2f;
-    public float minVerticalAngle = -80f; // Minimum vertical angle (looking down)
-    public float maxVerticalAngle = 80f;  // Maximum vertical angle (looking up)
-    public Vector3 defaultOffset = new Vector3(0f, 0.65f, 0f);
-    public Vector3 thirdPersonOffset = new Vector3(0f, 1.5f, -3f);
+    public float minVerticalAngle = -10f; // Minimum vertical angle (looking down)
+    public float maxVerticalAngle = 30f;  // Maximum vertical angle (looking up)
+    public Vector3 defaultOffset = new Vector3(0f, 3f, 0f);
+    public Vector3 thirdPersonOffset = new Vector3(0f, 4f, -3f);
 
     private Vector3 currentOffset;
     private Camera mainCamera;
