@@ -8,7 +8,7 @@ public class NextLevelScript : MonoBehaviour
     {
         Debug.Log("Tester");
         if (collision.tag == "Player")
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("Level5");
     }
 
 
