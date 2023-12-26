@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("Walking", false);
+            animator.SetBool("Sprinting", false);
         }
         if (canMove)
         {
