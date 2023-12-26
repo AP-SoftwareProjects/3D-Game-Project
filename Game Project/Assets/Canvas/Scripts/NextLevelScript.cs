@@ -3,12 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelScript : MonoBehaviour
 {
+    public string levelName = "Level5";
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Tester");
-        if (collision.tag == "Player")
-            SceneManager.LoadScene("Level5");
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(levelName);
+        }
     }
 
 
@@ -16,7 +18,7 @@ public class NextLevelScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SceneManager.LoadScene(levelName);
     }
 
     // Update is called once per frame

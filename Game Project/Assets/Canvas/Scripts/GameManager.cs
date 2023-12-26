@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
+    public GameObject player;
     public PlayerBalance PlayerBalance { get; }
     public List<TrashItem> TrashItems { get; }
 
@@ -47,10 +49,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < 10; i++)
-        {
-            TrashItems.Add(new TrashItem(TrashItem.BinType.RED, 13 * i));
-        }
+  
+
+#if UNITY_EDITOR
+        SceneManager.LoadScene("Level5");
+#endif
+
+        GameObject spawnPoint = GameObject.FindWithTag("Respawn");
+        Instantiate(player, spawnPoint.transform.position, Quaternion.identity);
     }
     public void AddTrash(TrashItem trashItem)
     {
