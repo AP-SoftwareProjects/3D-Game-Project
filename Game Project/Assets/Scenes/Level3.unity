@@ -111656,6 +111656,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1557109212735936414, guid: 094b37a3990389243b4b66ac739fdd1b,
+        type: 3}
+      propertyPath: defaultOffset.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557109212735936414, guid: 094b37a3990389243b4b66ac739fdd1b,
+        type: 3}
+      propertyPath: maxVerticalAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557109212735936414, guid: 094b37a3990389243b4b66ac739fdd1b,
+        type: 3}
+      propertyPath: minVerticalAngle
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557109212735936414, guid: 094b37a3990389243b4b66ac739fdd1b,
+        type: 3}
+      propertyPath: thirdPersonOffset.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1808918650408294973, guid: 094b37a3990389243b4b66ac739fdd1b,
         type: 3}
       propertyPath: m_Name
