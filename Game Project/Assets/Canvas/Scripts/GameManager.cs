@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public string devLevel = "Level1";
     private static GameManager instance;
     public PlayerBalance PlayerBalance { get; }
     public List<TrashItem> TrashItems { get; }
@@ -48,7 +49,21 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        #if UNITY_EDITOR
+        string currentSceneName = GetCurrentSceneName();
+        if (devLevel == currentSceneName) return;
+        #endif
+
+        SceneManager.LoadScene(devLevel);
     }
+    #if UNITY_EDITOR
+    private string GetCurrentSceneName()
+    {
+        string scenePath = UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().path;
+        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+        return sceneName;
+    }
+    #endif
     public void AddTrash(TrashItem trashItem)
     {
         TrashItems.Add(trashItem);

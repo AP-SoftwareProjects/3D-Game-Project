@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
         mainCamera = GetComponent<Camera>();
     }
 
-    void LateUpdate()
+    void Update()
     {
         if (target == null)
             return;

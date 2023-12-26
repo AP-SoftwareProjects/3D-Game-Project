@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashItem : MonoBehaviour
+public class TrashItem
 {
     public BinType Type { get; set; }
     public int Price { get; set; }
@@ -11,16 +11,6 @@ public class TrashItem : MonoBehaviour
     {
         Type = binType;
         Price = price;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
     public enum BinType
     {
