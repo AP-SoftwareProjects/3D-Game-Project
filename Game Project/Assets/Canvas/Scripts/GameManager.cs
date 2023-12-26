@@ -52,6 +52,10 @@ public class GameManager : MonoBehaviour
             TrashItems.Add(new TrashItem(TrashItem.BinType.RED, 13 * i));
         }
     }
+    public void AddTrash(TrashItem trashItem)
+    {
+        TrashItems.Add(trashItem);
+    }
     void Update()
     {
         /*

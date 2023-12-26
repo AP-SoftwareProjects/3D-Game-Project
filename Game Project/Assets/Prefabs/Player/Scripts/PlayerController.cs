@@ -32,57 +32,60 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
-        
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (!PlayerManager.Instance.IsPicking)
         {
-            moveDirection.y = jumpSpeed;
-            animator.SetTrigger("Jump");
-        }
-        else
-        {
-            moveDirection.y = movementDirectionY;
-        }
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
 
-        characterController.Move(moveDirection * Time.deltaTime);
+            bool isRunning = Input.GetKey(KeyCode.LeftShift);
+            float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
+            float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+            float movementDirectionY = moveDirection.y;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        bool isStandingStill = moveDirection.x == 0 && moveDirection.z == 0;
-
-        if (!isStandingStill)
-        {
-            if (isRunning)
+            if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
             {
-                animator.SetBool("Sprinting", true);
-                animator.SetBool("Walking", false);
+                moveDirection.y = jumpSpeed;
+                animator.SetTrigger("Jump");
             }
             else
             {
-                animator.SetBool("Sprinting", false);
-                animator.SetBool("Walking", true);
+                moveDirection.y = movementDirectionY;
             }
-        }
-        else
-        {
-            animator.SetBool("Walking", false);
-            animator.SetBool("Sprinting", false);
-        }
-        if (canMove)
-        {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            if (!characterController.isGrounded)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+
+            characterController.Move(moveDirection * Time.deltaTime);
+
+            bool isStandingStill = moveDirection.x == 0 && moveDirection.z == 0;
+
+            if (!isStandingStill)
+            {
+                if (isRunning)
+                {
+                    animator.SetBool("Sprinting", true);
+                    animator.SetBool("Walking", false);
+                }
+                else
+                {
+                    animator.SetBool("Sprinting", false);
+                    animator.SetBool("Walking", true);
+                }
+            }
+            else
+            {
+                animator.SetBool("Walking", false);
+                animator.SetBool("Sprinting", false);
+            }
+            if (canMove)
+            {
+                rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            }
         }
     }
 }
