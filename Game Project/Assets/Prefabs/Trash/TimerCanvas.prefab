@@ -328,3 +328,4 @@ MonoBehaviour:
   countingUp: 1
   minCount: 0
   maxCount: 60
+  autoDestroy: 0
