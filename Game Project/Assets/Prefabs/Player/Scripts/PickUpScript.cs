@@ -14,7 +14,7 @@ public class PickUpScript : MonoBehaviour
     private string _trashTag = "Trash";
     private Animator _animator;
 
-    public float pickupDuration = 1f;
+    public float pickupDuration = 3f;
     private float _pickupTimer = 0f;
 
     public float pickupCooldown = 2f;
@@ -25,6 +25,7 @@ public class PickUpScript : MonoBehaviour
 
     private GameObject _seenTrash;
     public GameObject trashPickupCanvasPrefab;
+    public GameObject timerCanvasPrefab;
 
     void Start()
     {
@@ -55,6 +56,35 @@ public class PickUpScript : MonoBehaviour
 
             _cooldownTimer = pickupDuration;
             _pickupTimer = pickupDuration;
+
+            GameObject timerInstance = Instantiate(timerCanvasPrefab, lookingTrash.transform);
+            timerInstance.name = timerCanvasPrefab.name;
+            timerInstance.transform.position = lookingTrash.transform.position;
+
+            Canvas timerCanvas = timerInstance.GetComponent<Canvas>();
+            if (timerCanvas != null)
+            {
+                timerCanvas.worldCamera = _camera;
+
+                TimerCanvasScript timerScript = timerInstance.GetComponent<TimerCanvasScript>();
+                if (timerScript != null)
+                {
+                    timerScript.countingUp = false;
+                    timerScript.minCount = 0f;
+                    timerScript.maxCount = pickupDuration;
+                    timerScript.autoDestroy = true;
+                }
+            }
+
+            Vector3 origin = new Vector3(0, 0, 0);
+            Transform originTransform = lookingTrash.transform.Find("Origin");
+            if (originTransform != null)
+                origin = originTransform.localPosition;
+
+            timerInstance.transform.localPosition = origin;
+
+            LookAtTarget lookAtTargetScript = lookingTrash.AddComponent<LookAtTarget>();
+            lookAtTargetScript.Start(3, timerInstance);
         }
 
 
@@ -75,7 +105,7 @@ public class PickUpScript : MonoBehaviour
     }
     private void ManageTrashCanvas(GameObject lookingTrash)
     {
-        if (lookingTrash != null)
+        if (lookingTrash != null && !PlayerManager.Instance.IsPicking)
         {
             Transform canvasTransform = lookingTrash.transform.Find(trashPickupCanvasPrefab.name);
 
