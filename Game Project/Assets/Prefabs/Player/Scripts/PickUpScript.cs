@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PickUpScript : MonoBehaviour
 {
-    public float pickupRange = 5f;
+    public float pickupRange = 4f;
     private string _trashTag = "Trash";
     private Animator _animator;
 
@@ -19,15 +20,19 @@ public class PickUpScript : MonoBehaviour
     public float pickupCooldown = 2f;
     private float _cooldownTimer = 0f;
 
-    private GameObject _trashObject;
     static private Timer timer = new Timer();
+    private Camera _camera;
 
+    private GameObject _seenTrash;
+    public GameObject trashPickupCanvasPrefab;
 
-    public GameObject prefabToInstantiate; // prefab
     void Start()
     {
         _animator = GetComponent<Animator>();
 
+        Transform childCamera = transform.Find("Camera");
+        if (childCamera != null)
+            _camera = childCamera.GetComponent<Camera>();
 
     }
 
@@ -36,33 +41,20 @@ public class PickUpScript : MonoBehaviour
         if (_cooldownTimer > 0f)
             _cooldownTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.E) && _cooldownTimer <= 0f && !PlayerManager.Instance.IsPicking)
+        GameObject lookingTrash = GetLookingTrash();
+
+        ManageTrashCanvas(lookingTrash);
+
+        if (Input.GetKeyDown(KeyCode.E) &&
+            _cooldownTimer <= 0f &&
+            !PlayerManager.Instance.IsPicking &&
+            lookingTrash != null)
         {
-            if (IsCloseToTrash())
-            {
+            PlayerManager.Instance.IsPicking = true;
+            _animator.SetBool("PickingUp", true);
 
-                PlayerManager.Instance.IsPicking = true;
-                _animator.SetBool("PickingUp", true);
-
-                _cooldownTimer = pickupDuration;
-                _pickupTimer = pickupDuration;
-
-               
-                GameObject newPrefabInstance = Instantiate(prefabToInstantiate,_trashObject.transform);
-                newPrefabInstance.transform.parent = transform;
-                newPrefabInstance.transform.position = new Vector3(0f, 0f, 0f);
-                newPrefabInstance.transform.rotation = Quaternion.identity;
-                //timer.Start();
-
-
-                //   Vector3 directionToTarget = focusObject.transform.position - transform.position;
-                // Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget, Vector3.up);
-
-                //    rotationToTarget *= Quaternion.Euler(0f, 180f, 0f);
-                //  tagObject.transform.rotation = rotationToTarget;
-
-            }
-
+            _cooldownTimer = pickupDuration;
+            _pickupTimer = pickupDuration;
         }
 
 
@@ -81,18 +73,57 @@ public class PickUpScript : MonoBehaviour
             }
         }
     }
-
-    bool IsCloseToTrash()
+    private void ManageTrashCanvas(GameObject lookingTrash)
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, pickupRange))
+        if (lookingTrash != null)
         {
-            if (hit.collider.CompareTag(_trashTag))
+            Transform canvasTransform = lookingTrash.transform.Find(trashPickupCanvasPrefab.name);
+
+            if (canvasTransform == null)
             {
-                _trashObject = hit.collider.gameObject;
-                return true;
+                GameObject canvasInstance = Instantiate(trashPickupCanvasPrefab, lookingTrash.transform);
+                canvasInstance.name = trashPickupCanvasPrefab.name;
+                canvasInstance.transform.position = lookingTrash.transform.position;
+                canvasInstance.GetComponent<Canvas>().worldCamera = _camera;
+
+                Vector3 origin = new (0, 0, 0);
+                if (lookingTrash.transform.Find("Origin"))
+                    origin = lookingTrash.transform.Find("Origin").transform.localPosition;
+
+                canvasInstance.transform.localPosition = origin;
+
+                LookAtTarget lookAtTargetScript = lookingTrash.AddComponent<LookAtTarget>();
+                lookAtTargetScript.Start(3, canvasInstance);
+            }
+
+            _seenTrash = lookingTrash;
+        }
+        else
+        {
+            if (_seenTrash != null)
+            {
+                Transform canvasTransform = _seenTrash.transform.Find(trashPickupCanvasPrefab.name);
+
+                if (canvasTransform != null)
+                    Destroy(canvasTransform.gameObject);
+
+                LookAtTarget lookAtTargetScript = _seenTrash.GetComponent<LookAtTarget>();
+                if (lookAtTargetScript != null)
+                    Destroy(lookAtTargetScript);
             }
         }
-        return false;
+    }
+    private GameObject GetLookingTrash()
+    {
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, pickupRange))
+        {
+            if (hit.collider.CompareTag("Trash"))
+                return hit.collider.gameObject;
+        }
+        return null;
     }
 
     void PickupTrash()
@@ -103,7 +134,8 @@ public class PickUpScript : MonoBehaviour
 
     void DestroyTrash()
     {
-        Destroy(_trashObject);
+        Destroy(_seenTrash);
+        _seenTrash = null;
     }
     void OnDrawGizmosSelected()
     {
