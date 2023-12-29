@@ -1171,7 +1171,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8606009855479923708}
-  - component: {fileID: 6091546491805792014}
   - component: {fileID: 4727968481626706424}
   m_Layer: 7
   m_Name: trash_can
@@ -1189,8 +1188,8 @@ Transform:
   m_GameObject: {fileID: 7597964180520646025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.054, y: 0.2000004, z: 8.815}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: -316.68933, y: 1.7644862, z: 196.59906}
+  m_LocalScale: {x: 0.216663, y: 0.216663, z: 0.216663}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3437450019187182168}
@@ -1220,31 +1219,6 @@ Transform:
   - {fileID: 7945830521239474242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6091546491805792014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7597964180520646025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31af2374ee2a6ec469b8c8f393c23ed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  objectLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  interactionKey: 101
-  camera: {fileID: 0}
-  tagObject: {fileID: 8416361662125448412}
-  focusObject: {fileID: 0}
-  tagDisplayRange: 5
-  particlePrefab: {fileID: 3520674025310094113, guid: 4808ac9bc5d23d44aa08f8ea631943bd,
-    type: 3}
 --- !u!136 &4727968481626706424
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2244,6 +2218,7 @@ GameObject:
   - component: {fileID: 8416361662125448412}
   - component: {fileID: 664696734540430429}
   - component: {fileID: 1880560064485337609}
+  - component: {fileID: 4920659523962447541}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -2334,3 +2309,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4920659523962447541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119385684564203108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6ef5df89b6e664a882dfce9836f713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 2
+  followTag: Head
+  hideGameobject: {fileID: 8990873529229353479}
