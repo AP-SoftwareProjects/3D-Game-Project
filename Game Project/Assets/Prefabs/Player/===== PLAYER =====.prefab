@@ -3500,10 +3500,8 @@ MonoBehaviour:
   pickupRange: 5
   pickupDuration: 2
   pickupCooldown: 1
-  focusObject: {fileID: 0}
-  tagObject: {fileID: 2557932254011826683}
-  uiFill: {fileID: 5541569438027575652}
-  uiText: {fileID: 3393520966601473419}
+  prefabToInstantiate: {fileID: 7058721509316876947, guid: 146696697efb6d44da119d7014ce922e,
+    type: 3}
 --- !u!114 &7126999802104883232
 MonoBehaviour:
   m_ObjectHideFlags: 0

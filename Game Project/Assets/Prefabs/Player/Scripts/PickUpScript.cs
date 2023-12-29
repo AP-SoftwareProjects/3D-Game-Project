@@ -20,24 +20,15 @@ public class PickUpScript : MonoBehaviour
     private float _cooldownTimer = 0f;
 
     private GameObject _trashObject;
-    public GameObject focusObject;
-    public Canvas tagObject;
+    static private Timer timer = new Timer();
 
 
-    
-    [SerializeField] private Image uiFill;
-    [SerializeField] private TextMeshProUGUI uiText;
-
-    //public int Duration;
-
-    private int remainingDuration;
-    
-
+    public GameObject prefabToInstantiate; // prefab
     void Start()
     {
         _animator = GetComponent<Animator>();
 
-        tagObject.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -49,17 +40,21 @@ public class PickUpScript : MonoBehaviour
         {
             if (IsCloseToTrash())
             {
-                tagObject.gameObject.SetActive(true);
-                Being(Convert.ToInt32(pickupDuration)); //
+
                 PlayerManager.Instance.IsPicking = true;
                 _animator.SetBool("PickingUp", true);
 
                 _cooldownTimer = pickupDuration;
                 _pickupTimer = pickupDuration;
 
+               
+                GameObject newPrefabInstance = Instantiate(prefabToInstantiate,_trashObject.transform);
+                newPrefabInstance.transform.parent = transform;
+                newPrefabInstance.transform.position = new Vector3(0f, 0f, 0f);
+                newPrefabInstance.transform.rotation = Quaternion.identity;
+                //timer.Start();
 
 
-                
                 //   Vector3 directionToTarget = focusObject.transform.position - transform.position;
                 // Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget, Vector3.up);
 
@@ -118,28 +113,4 @@ public class PickUpScript : MonoBehaviour
     
 
     //timer code
-    private void Being(int Second)
-    {
-        remainingDuration = Second;
-        StartCoroutine(UpdateTimer());
-    }
-    private IEnumerator UpdateTimer()
-    {
-        while(remainingDuration >= 0)
-        {
-        uiText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
-        uiFill.fillAmount = Mathf.InverseLerp(0, pickupDuration, remainingDuration); //
-        remainingDuration--;
-        yield return new WaitForSeconds(1f);
-        }
-        if(remainingDuration < 0)
-        {
-            tagObject.gameObject.SetActive(false);
-        }
-
-    }
-    private void onEnd()
-    {
-        print("end");
-    }
 }
