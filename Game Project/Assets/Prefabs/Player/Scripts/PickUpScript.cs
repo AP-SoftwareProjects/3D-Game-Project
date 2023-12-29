@@ -91,7 +91,8 @@ public class PickUpScript : MonoBehaviour
     void ConfigureTimerLookAt(GameObject timerInstance, GameObject trash)
     {
         LookAtTarget lookAtTargetScript = trash.AddComponent<LookAtTarget>();
-        lookAtTargetScript.Start(3, timerInstance);
+        lookAtTargetScript.maxDistance = 3;
+        lookAtTargetScript.hideGameobject = timerInstance;
     }
 
     void ManageTrashCanvas(GameObject lookingTrash)
@@ -120,7 +121,8 @@ public class PickUpScript : MonoBehaviour
         canvasInstance.transform.localPosition = origin;
 
         LookAtTarget lookAtTargetScript = lookingTrash.AddComponent<LookAtTarget>();
-        lookAtTargetScript.Start(3, canvasInstance);
+        lookAtTargetScript.maxDistance = 3;
+        lookAtTargetScript.hideGameobject = canvasInstance;
     }
 
     void DestroyTrashCanvas()

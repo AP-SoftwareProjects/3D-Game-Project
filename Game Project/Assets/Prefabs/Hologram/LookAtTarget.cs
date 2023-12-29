@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class LookAtTarget : MonoBehaviour
 {
@@ -9,11 +6,6 @@ public class LookAtTarget : MonoBehaviour
     public string followTag = "Head";
     public GameObject hideGameobject;
 
-    public void Start(float distance, GameObject canvas)
-    {
-        maxDistance = distance;
-        hideGameobject = canvas;
-    }
     void Update()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag(followTag);
