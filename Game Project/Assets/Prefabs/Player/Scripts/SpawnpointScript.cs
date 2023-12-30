@@ -7,7 +7,7 @@ public class SpawnpointScript : MonoBehaviour
     public GameObject player;
     void Start()
     {
-        Instantiate(player, transform.position, Quaternion.identity);
+        player.transform.position = transform.position;
     }
 
     void Update()
