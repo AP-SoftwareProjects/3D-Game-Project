@@ -53,9 +53,4 @@ public class TrashCanScript : MonoBehaviour
         ParticleSystem spawnedParticles = Instantiate(particlePrefab, spawnPosition, spawnRotation, _currentTrashCan.transform);
         spawnedParticles.transform.SetParent(_currentTrashCan.transform);
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(_currentTrashCan.transform.position, interactionRange);
-    }
 }
