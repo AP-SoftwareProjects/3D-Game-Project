@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3387393644284161494}
   m_Layer: 0
   m_Name: BottleOfBeer1_2
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,10 +30,11 @@ Transform:
   m_GameObject: {fileID: 4593596131837695826}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0.00000023040462, z: -0.00000023040465, w: -0.7071067}
-  m_LocalPosition: {x: -3.9487143, y: 0.19999981, z: 6.0209837}
+  m_LocalPosition: {x: 0.937, y: 0.20000005, z: 8.755}
   m_LocalScale: {x: 1.2755799, y: 1.27558, z: 1.27558}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5045824457923874913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 360, z: 0}
 --- !u!33 &1728114615614688124
@@ -156,3 +157,34 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e41b4f9459c489a4596e740b61a3dcf1, type: 3}
+--- !u!1 &8938504145971730852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5045824457923874913}
+  m_Layer: 0
+  m_Name: Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5045824457923874913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8938504145971730852}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.694951, y: -0.00000022644382, z: 0.00000023429853, w: -0.71905714}
+  m_LocalPosition: {x: -0, y: -0, z: 0.644}
+  m_LocalScale: {x: 0.7839572, y: 0.783957, z: 0.783957}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8844073005255256974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

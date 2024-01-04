@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7679975550595580824}
   m_Layer: 0
   m_Name: Bottle3_1 (1)
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,10 +30,11 @@ Transform:
   m_GameObject: {fileID: 417778303553636956}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5000001, w: 0.49999994}
-  m_LocalPosition: {x: -3.2242534, y: 0.19999981, z: 3.7051413}
+  m_LocalPosition: {x: -0.235, y: 0.20000005, z: 9.767}
   m_LocalScale: {x: 1.1078538, y: 1.107854, z: 1.107854}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1535874755114954510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!33 &6003749620345144996
@@ -156,3 +157,34 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: cfd21ef8050231440a7ccd68a5517483, type: 3}
+--- !u!1 &7248208700275659668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535874755114954510}
+  m_Layer: 0
+  m_Name: Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535874755114954510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7248208700275659668}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.49140453, y: 0.4914047, z: -0.5084501, w: 0.5084501}
+  m_LocalPosition: {x: 0, y: -0, z: 0.563}
+  m_LocalScale: {x: 0.90264606, y: 0.90264577, z: 0.90264606}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8230158569949933240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
