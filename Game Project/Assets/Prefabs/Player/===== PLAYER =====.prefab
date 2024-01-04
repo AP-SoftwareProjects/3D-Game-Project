@@ -2488,7 +2488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4098256255593366879}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2962661, y: -0.37860298, z: 0.12933356, w: 0.86727107}
+  m_LocalRotation: {x: 0.29626608, y: -0.37860298, z: 0.12933353, w: 0.86727107}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3162,6 +3162,7 @@ GameObject:
   - component: {fileID: 5715237449033604425}
   - component: {fileID: 7990427677786293391}
   - component: {fileID: 192738255744596325}
+  - component: {fileID: 6302335124255376759}
   m_Layer: 0
   m_Name: FirstPersonCamera
   m_TagString: Untagged
@@ -3224,7 +3225,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 183
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3427,6 +3428,21 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &6302335124255376759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348485576098142941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6786a5ef376c746b30572905537d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layers:
+    serializedVersion: 2
+    m_Bits: 183
 --- !u!1 &5375017060194724952
 GameObject:
   m_ObjectHideFlags: 0

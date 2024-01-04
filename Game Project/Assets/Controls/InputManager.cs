@@ -20,7 +20,10 @@ public class InputManager : MonoBehaviour
         if (_instance != null && _instance != this)
             Destroy(this.gameObject);
         else
+        {
+            DontDestroyOnLoad(gameObject);
             _instance = this;
+        }
         playerControls = new PlayerControls();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
