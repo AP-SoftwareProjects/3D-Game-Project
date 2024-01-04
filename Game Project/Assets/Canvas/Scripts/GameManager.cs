@@ -18,11 +18,14 @@ public class GameManager : MonoBehaviour
     public Text OrangeBinText;
     public Text GreenBinText;
 
+    public Texture2D crosshair;
+
     private GameManager()
     {
         this.PlayerBalance = new();
         this.TrashItems = new();
     }
+
 
     private void Awake()
     {
@@ -49,27 +52,32 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        #if UNITY_EDITOR
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+#if UNITY_EDITOR
         string currentSceneName = GetCurrentSceneName();
         if (devLevel == currentSceneName) return;
-        #endif
+#endif
 
         SceneManager.LoadScene(devLevel);
     }
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private string GetCurrentSceneName()
     {
         string scenePath = UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().path;
         string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
         return sceneName;
     }
-    #endif
+#endif
     public void AddTrash(TrashItem trashItem)
     {
         TrashItems.Add(trashItem);
     }
     void Update()
     {
+
+
         /*
 
                  if (SceneManager.GetActiveScene().name == "Level1")
