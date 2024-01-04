@@ -1,8 +1,9 @@
+using Cinemachine;
 using UnityEngine;
 
 public class ActivateCanvasOnLook : MonoBehaviour
 {
-    public Camera playerCamera;
+    public CinemachineVirtualCamera playerCamera;
     public Canvas trashCanvas;
 
     private PickUpScript _pickupScript;

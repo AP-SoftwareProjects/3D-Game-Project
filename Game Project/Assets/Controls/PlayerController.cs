@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private InputManager inputManager;
     private Transform cameraTransform;
     private Animator animator;
+    private PlayerManager playerManager;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
         animator = GetComponent<Animator>();
+        playerManager = PlayerManager.Instance;
     }
 
     void Update()
@@ -32,7 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-
         bool isSprinting = inputManager.PlayerSprinting();
         Vector3 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
@@ -40,7 +41,11 @@ public class PlayerController : MonoBehaviour
         move.y = 0f;
 
         // Set player rotation to match the camera rotation
-        playerbody.transform.rotation = Quaternion.Euler(0, cameraTransform.rotation.eulerAngles.y, 0);
+
+        if (playerManager.IsPicking)
+            move = Vector3.zero;
+        else
+            playerbody.transform.rotation = Quaternion.Euler(0, cameraTransform.rotation.eulerAngles.y, 0);
 
         controller.Move(move * Time.deltaTime * (isSprinting ? playerSprintSpeed : playerWalkSpeed));
 
