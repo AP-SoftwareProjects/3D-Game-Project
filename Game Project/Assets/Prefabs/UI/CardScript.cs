@@ -6,7 +6,7 @@ public class CardScript : MonoBehaviour
 
     public string title;
     public Sprite iconImg;
-    public float priceValue;
+    public int priceValue;
 
 
     private void Start()
