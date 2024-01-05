@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
     public Text OrangeBinText;
     public Text GreenBinText;
 
-    public Texture2D crosshair;
-
     private GameManager()
     {
         this.PlayerBalance = new();
