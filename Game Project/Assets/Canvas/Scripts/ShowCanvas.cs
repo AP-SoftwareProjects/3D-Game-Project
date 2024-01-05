@@ -14,6 +14,8 @@ public class ShowCanvas : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             this.gameObject.GetComponent<Canvas>().enabled = !this.gameObject.GetComponent<Canvas>().enabled;
+            Cursor.visible = !Cursor.visible;
+            Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
 }
