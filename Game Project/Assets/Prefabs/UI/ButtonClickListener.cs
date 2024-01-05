@@ -21,9 +21,13 @@ public class ButtonClickListener : MonoBehaviour
 
     void OnClick()
     {
-        //if (GameManager.Instance.PlayerBalance.Coins >= price)
-        //    GameManager.Instance.PlayerBalance.SubtractCoins(price);
+        Debug.LogWarning(GameObject.FindAnyObjectByType<PlayerController>().walkingSpeed);
+        if (GameManager.Instance.PlayerBalance.Coins >= price)
+            GameManager.Instance.PlayerBalance.SubtractCoins(price);
+        else return;
 
+        PickUpScript pickUpScript = GameObject.FindObjectOfType<PickUpScript>();
+        PlayerController playerController = GameObject.FindAnyObjectByType<PlayerController>();
         switch (buttonAction)
         {
             case ButtonActions.TRASH_SPAWN_RATE:
@@ -35,12 +39,17 @@ public class ButtonClickListener : MonoBehaviour
             case ButtonActions.TRASH_SIZE:
                 break;
             case ButtonActions.PLAYER_MOVEMENT_SPEED:
+                playerController.walkingSpeed -= 0.1f;
+                playerController.runningSpeed -= 0.1f;
                 break;
             case ButtonActions.TRASH_PICKUP_SPEED:
+                pickUpScript.pickupDuration -= 0.1f;
                 break;
             case ButtonActions.TRASH_PICKUP_DELAY:
+                pickUpScript.pickupCooldown -= 0.05f;
                 break;
             case ButtonActions.INVENTORY_MAX_SIZE:
+                GameManager.Instance.MAX_INVENTORY_SIZE += 25;
                 break;
         }
     }
