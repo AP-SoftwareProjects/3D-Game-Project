@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public string devLevel = "Level1";
     private static GameManager instance;
     public PlayerBalance PlayerBalance { get; }
+
+    public int MAX_INVENTORY_SIZE = 1;
     public List<TrashItem> TrashItems { get; }
 
     public Text CoinsText;
@@ -70,6 +72,11 @@ public class GameManager : MonoBehaviour
     {
         TrashItems.Add(trashItem);
     }
+
+    public bool IsInventoryFull()
+    {
+        return this.MAX_INVENTORY_SIZE <= this.TrashItems.Count;
+    }
     void Update()
     {
 
@@ -95,9 +102,9 @@ public class GameManager : MonoBehaviour
         }
         if (RedBinText != null && OrangeBinText != null && GreenBinText != null)
         {
-            this.RedBinText.text = this.TrashItems.Count(item => item.Type == TrashItem.BinType.RED).ToString();
-            this.OrangeBinText.text = this.TrashItems.Count(item => item.Type == TrashItem.BinType.ORANGE).ToString();
-            this.GreenBinText.text = this.TrashItems.Count(item => item.Type == TrashItem.BinType.GREEN).ToString();
+            this.RedBinText.text = this.TrashItems.Count(item => item.Type == BinType.RED).ToString();
+            this.OrangeBinText.text = this.TrashItems.Count(item => item.Type == BinType.ORANGE).ToString();
+            this.GreenBinText.text = this.TrashItems.Count(item => item.Type == BinType.GREEN).ToString();
         }
     }
 }
