@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public string devLevel = "Level1";
     private static GameManager instance;
     public PlayerBalance PlayerBalance { get; }
+
+    public int MAX_INVENTORY_SIZE = 1;
     public List<TrashItem> TrashItems { get; }
 
     public Text CoinsText;
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
         this.PlayerBalance = new();
         this.TrashItems = new();
     }
+
 
     private void Awake()
     {
@@ -49,27 +52,35 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        #if UNITY_EDITOR
+
+#if UNITY_EDITOR
         string currentSceneName = GetCurrentSceneName();
         if (devLevel == currentSceneName) return;
-        #endif
+#endif
 
         SceneManager.LoadScene(devLevel);
     }
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private string GetCurrentSceneName()
     {
         string scenePath = UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().path;
         string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
         return sceneName;
     }
-    #endif
+#endif
     public void AddTrash(TrashItem trashItem)
     {
         TrashItems.Add(trashItem);
     }
+
+    public bool IsInventoryFull()
+    {
+        return this.MAX_INVENTORY_SIZE <= this.TrashItems.Count;
+    }
     void Update()
     {
+
+
         /*
 
                  if (SceneManager.GetActiveScene().name == "Level1")
@@ -91,9 +102,9 @@ public class GameManager : MonoBehaviour
         }
         if (RedBinText != null && OrangeBinText != null && GreenBinText != null)
         {
-            this.RedBinText.text = this.TrashItems.Count(item => item.Type == TrashItem.BinType.RED).ToString();
-            this.OrangeBinText.text = this.TrashItems.Count(item => item.Type == TrashItem.BinType.ORANGE).ToString();
-            this.GreenBinText.text = this.TrashItems.Count(item => item.Type == TrashItem.BinType.GREEN).ToString();
+            this.RedBinText.text = this.TrashItems.Count(item => item.Type == BinType.RED).ToString();
+            this.OrangeBinText.text = this.TrashItems.Count(item => item.Type == BinType.ORANGE).ToString();
+            this.GreenBinText.text = this.TrashItems.Count(item => item.Type == BinType.GREEN).ToString();
         }
     }
 }
