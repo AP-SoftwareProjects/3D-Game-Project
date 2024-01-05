@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
-using UnityEngine.Rendering.HighDefinition;
 
 public class TrashCanScript : MonoBehaviour
 {
@@ -11,10 +9,11 @@ public class TrashCanScript : MonoBehaviour
 
     private GameObject _currentTrashCan;
 
-    private Camera _camera;
+    [SerializeField] private CinemachineVirtualCamera _camera;
+    private Camera _normalCamera;
     void Start()
     {
-        _camera = transform.Find("Camera")?.GetComponent<Camera>();
+        _normalCamera = _camera.GetComponent<Camera>();
     }
 
     void Update()
@@ -26,7 +25,7 @@ public class TrashCanScript : MonoBehaviour
 
     GameObject GetLookingTrashcan()
     {
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _normalCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactionRange))
         {
@@ -52,10 +51,5 @@ public class TrashCanScript : MonoBehaviour
 
         ParticleSystem spawnedParticles = Instantiate(particlePrefab, spawnPosition, spawnRotation, _currentTrashCan.transform);
         spawnedParticles.transform.SetParent(_currentTrashCan.transform);
-    }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(_currentTrashCan.transform.position, interactionRange);
     }
 }

@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class PickUpScript : MonoBehaviour
@@ -9,7 +10,8 @@ public class PickUpScript : MonoBehaviour
     private float _cooldownTimer = 0f;
 
     private Animator _animator;
-    private Camera _camera;
+    [SerializeField] private CinemachineVirtualCamera _camera;
+    private Camera _normalCamera;
     private GameObject _seenTrash;
 
     public GameObject trashPickupCanvasPrefab;
@@ -18,7 +20,7 @@ public class PickUpScript : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _camera = transform.Find("Camera")?.GetComponent<Camera>();
+        _normalCamera = _camera.GetComponent<Camera>();
     }
 
     void Update()
@@ -79,7 +81,7 @@ public class PickUpScript : MonoBehaviour
         Canvas timerCanvas = timerInstance.GetComponent<Canvas>();
         if (timerCanvas != null)
         {
-            timerCanvas.worldCamera = _camera;
+            timerCanvas.worldCamera = _normalCamera;
 
             TimerCanvasScript timerScript = timerInstance.GetComponent<TimerCanvasScript>();
             if (timerScript != null)
@@ -121,7 +123,7 @@ public class PickUpScript : MonoBehaviour
         GameObject canvasInstance = Instantiate(trashPickupCanvasPrefab, lookingTrash.transform);
         canvasInstance.name = trashPickupCanvasPrefab.name;
         canvasInstance.transform.position = lookingTrash.transform.position;
-        canvasInstance.GetComponent<Canvas>().worldCamera = _camera;
+        canvasInstance.GetComponent<Canvas>().worldCamera = _normalCamera;
 
         Vector3 origin = lookingTrash.transform.Find("Origin")?.localPosition ?? Vector3.zero;
         canvasInstance.transform.localPosition = origin;
@@ -180,7 +182,7 @@ public class PickUpScript : MonoBehaviour
 
     GameObject GetLookingTrash()
     {
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _normalCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
         {
