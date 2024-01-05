@@ -23,6 +23,12 @@ public class PickUpScript : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.IsInventoryFull())
+        {
+            //TODO -> SHOW NOTIFICATION INVENTORY IS FULL
+            return;
+        }
+
         UpdateTimers();
         GameObject lookingTrash = GetLookingTrash();
         ManageTrashCanvas(lookingTrash);
@@ -163,7 +169,7 @@ public class PickUpScript : MonoBehaviour
     void PickupTrash()
     {
         DestroyTrash();
-        GameManager.Instance.AddTrash(new(TrashItem.BinType.GREEN, 100));
+        GameManager.Instance.AddTrash(new(BinType.GREEN, 100));
     }
 
     void DestroyTrash()
