@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerWalkSpeed = 3.0f;
-    [SerializeField] private float playerSprintSpeed = 4.0f;
-    [SerializeField] private float jumpHeight = 1.0f;
+    [SerializeField] public float playerWalkSpeed = 3.0f;
+    [SerializeField] public float playerSprintSpeed = 4.0f;
+    [SerializeField] public float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private GameObject playerbody;
 

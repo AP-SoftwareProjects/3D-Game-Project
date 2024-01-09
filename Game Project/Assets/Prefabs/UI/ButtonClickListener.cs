@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ButtonClickListener : MonoBehaviour
 {
-    // Start is called before the first frame update
     private Button button;
     private CardScript card;
     private int price;
@@ -21,13 +20,12 @@ public class ButtonClickListener : MonoBehaviour
 
     void OnClick()
     {
-        Debug.LogWarning(GameObject.FindAnyObjectByType<PlayerController>().walkingSpeed);
         if (GameManager.Instance.PlayerBalance.Coins >= price)
             GameManager.Instance.PlayerBalance.SubtractCoins(price);
         else return;
 
-        PickUpScript pickUpScript = GameObject.FindObjectOfType<PickUpScript>();
-        PlayerController playerController = GameObject.FindAnyObjectByType<PlayerController>();
+        PickUpScript pickUpScript = FindObjectOfType<PickUpScript>();
+        PlayerController playerController = FindAnyObjectByType<PlayerController>();
         switch (buttonAction)
         {
             case ButtonActions.TRASH_SPAWN_RATE:
@@ -39,8 +37,8 @@ public class ButtonClickListener : MonoBehaviour
             case ButtonActions.TRASH_SIZE:
                 break;
             case ButtonActions.PLAYER_MOVEMENT_SPEED:
-                playerController.walkingSpeed -= 0.1f;
-                playerController.runningSpeed -= 0.1f;
+                playerController.playerWalkSpeed += 0.1f;
+                playerController.playerSprintSpeed += 0.1f;
                 break;
             case ButtonActions.TRASH_PICKUP_SPEED:
                 pickUpScript.pickupDuration -= 0.1f;
