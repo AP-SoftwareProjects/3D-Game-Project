@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class TrashItem
 {
     public BinType Type { get; set; }
@@ -12,11 +8,11 @@ public class TrashItem
         Type = binType;
         Price = price;
     }
-    public enum BinType
-    {
-        RED,
-        ORANGE,
-        GREEN
-    }
 
+}
+public enum BinType
+{
+    RED,
+    ORANGE,
+    GREEN
 }
