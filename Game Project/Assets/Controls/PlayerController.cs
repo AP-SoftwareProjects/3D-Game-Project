@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private GameObject playerbody;
+    [SerializeField] private GameObject direction;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private Animator animator;
     private PlayerManager playerManager;
+
 
     private void Start()
     {
@@ -37,8 +39,13 @@ public class PlayerController : MonoBehaviour
         bool isSprinting = inputManager.PlayerSprinting();
         Vector3 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
-        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+        move = direction.transform.forward * move.z + direction.transform.right * move.x;
         move.y = 0f;
+        Debug.Log(move.z);
+        Debug.Log(cameraTransform.forward);
+        Debug.Log(cameraTransform.right);
+        Debug.Log(move);
+        Debug.Log("----");
 
         // Set player rotation to match the camera rotation
 
