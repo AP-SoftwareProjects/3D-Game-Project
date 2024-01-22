@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class HoverTextScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverTextScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Animator animator;
     public string levelToLoad = "Level1";
@@ -33,11 +33,6 @@ public class HoverTextScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
             animator.SetBool("IsHovering", isHovering);
         }
     }
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        LoadLevel();
-    }
-
     private void LoadLevel()
     {
         if (!string.IsNullOrEmpty(levelToLoad))
@@ -48,5 +43,10 @@ public class HoverTextScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
         {
             Debug.LogError("Level name is not specified in HoverTextScript.");
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        LoadLevel();
     }
 }
