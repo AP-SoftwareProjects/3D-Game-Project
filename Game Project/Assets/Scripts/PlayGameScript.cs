@@ -17,7 +17,7 @@ public class PlayGameScript : MonoBehaviour
         
     }
 
-    public void PlayGame()
+    public static void PlayGame()
     {
         SceneManager.LoadScene("Level1");
     }
