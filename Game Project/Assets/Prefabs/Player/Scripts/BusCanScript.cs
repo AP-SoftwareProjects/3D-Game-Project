@@ -1,13 +1,10 @@
 using Cinemachine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BusCanScript : MonoBehaviour
 {
 
-	public float interactionRange = 2f;
+	public float interactionRange = 4f;
 	public KeyCode interactionKey = KeyCode.E;
 
 	private GameObject _currentBus;
@@ -33,7 +30,6 @@ public class BusCanScript : MonoBehaviour
 			canvasHud.enabled = false;
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
-			Debug.Log("Dit is je geld: " + GameManager.Instance.PlayerBalance.Coins);
 		}
 			
 	}	

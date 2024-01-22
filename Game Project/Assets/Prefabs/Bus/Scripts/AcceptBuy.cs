@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,14 @@ public class AcceptBuy : MonoBehaviour
 	public Canvas canvas;
 	public int amountToPay;
 
-	public void Click()
+	[SerializeField] private TextMeshProUGUI priceText;
+
+    private void Start()
+    {
+		priceText.text = amountToPay.ToString();
+    }
+
+    public void Click()
     {
 		//Check coins
 		//remove coins
