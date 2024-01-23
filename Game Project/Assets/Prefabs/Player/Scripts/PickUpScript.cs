@@ -171,7 +171,7 @@ public class PickUpScript : MonoBehaviour
     void PickupTrash()
     {
         DestroyTrash();
-        GameManager.Instance.AddTrash(new(BinType.GREEN, 100));
+        GameManager.Instance.AddTrash(new(BinType.GREEN, 100)); 
     }
 
     void DestroyTrash()
