@@ -17,7 +17,6 @@ public class BusCanScript : MonoBehaviour
 	void Start()
 	{
 		_normalCamera = _camera.GetComponent<Camera>();
-		GameManager.Instance.PlayerBalance.Coins = 100;
 
 		canvasHud = GameObject.Find("HUD").GetComponentInChildren<Canvas>();
 		canvasCar = GameObject.Find("Bus").GetComponentInChildren<Canvas>();

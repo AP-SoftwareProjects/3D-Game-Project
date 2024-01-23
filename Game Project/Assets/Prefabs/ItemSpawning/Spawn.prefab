@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3121297075357389922}
   - component: {fileID: 644149997753167477}
   - component: {fileID: 4459265721597191760}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965428983125961700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.4, y: 6.11, z: 35.83}
-  m_LocalScale: {x: 4.282829, y: 1.9988, z: 4.444332}
+  m_LocalRotation: {x: -0, y: -0.19788519, z: -0, w: 0.9802252}
+  m_LocalPosition: {x: -45.29, y: 6.11, z: 31.89}
+  m_LocalScale: {x: 10.432971, y: 1.9988, z: 9.684645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -22.827, z: 0}
 --- !u!33 &3121297075357389922
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97,5 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myObjects:
-  - {fileID: 3170481372482154376, guid: 3461506347f74934dafcb80094bc67d2, type: 3}
-  period: 0.1
+  - {fileID: 451882635736908465, guid: caf51bcf17ad1cc42b987ead850dbc3f, type: 3}
+  - {fileID: 4156406034410003255, guid: 3962075f083922544a31d1225be3e54b, type: 3}
+  period: 5

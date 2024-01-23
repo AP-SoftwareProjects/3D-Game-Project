@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DenyBuy : MonoBehaviour
 {
-    public Canvas canvasCar;
+    private Canvas canvasCar;
     private Canvas canvasHud;
 
 	public void Start()
 	{
         canvasHud = GameObject.Find("HUD").GetComponentInChildren<Canvas>();
-    }
+        canvasCar = GameObject.Find("Bus").GetComponentInChildren<Canvas>();
+	}
 	public void Click()
     {
         Time.timeScale = 1;
