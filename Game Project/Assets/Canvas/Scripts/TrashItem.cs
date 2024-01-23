@@ -1,13 +1,11 @@
-public class TrashItem
+using UnityEngine;
+
+public class TrashItem: MonoBehaviour
 {
     public BinType Type { get; set; }
-    public int Price { get; set; }
+    public float Duration { get; set; }
+    public float Price { get; set; }
 
-    public TrashItem(BinType binType, int price)
-    {
-        Type = binType;
-        Price = price;
-    }
 
 }
 public enum BinType
