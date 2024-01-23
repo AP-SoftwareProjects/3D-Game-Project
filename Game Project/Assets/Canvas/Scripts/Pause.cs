@@ -1,25 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private GameObject pauseMenu;
-    void Start()
+    public Canvas pauseMenuCanvas;
+    public Button restartButton;
+
+    private bool isPaused = false;
+
+    void Start()    
     {
-        
+        if (pauseMenuCanvas != null)
+        {
+            pauseMenuCanvas.enabled = false;
+        }
+
+        if (restartButton != null)
+        {
+            restartButton.onClick.AddListener(RestartGame);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseMenu();
+        }
     }
 
-    void PauseGame()
+    void TogglePauseMenu()
     {
-        pauseMenu.SetActive(true);
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+ 
+            Time.timeScale = 0f;
+
+            if (pauseMenuCanvas != null)
+            {
+                pauseMenuCanvas.enabled = true;
+            }
+        }
+        else
+        {
+           
+            Time.timeScale = 1f;
+
+            if (pauseMenuCanvas != null)
+            {
+                pauseMenuCanvas.enabled = false;
+            }
+        }
+    }
+
+    void RestartGame()
+    {
+        pauseMenuCanvas.enabled = false;
     }
 }
