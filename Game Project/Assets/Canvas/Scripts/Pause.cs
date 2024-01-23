@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public Canvas pauseMenuCanvas;
-    public Button restartButton;
+    public Button continueButton;
 
     private bool isPaused = false;
 
@@ -18,9 +18,9 @@ public class Pause : MonoBehaviour
             pauseMenuCanvas.enabled = false;
         }
 
-        if (restartButton != null)
+        if (continueButton != null)
         {
-            restartButton.onClick.AddListener(RestartGame);
+            continueButton.onClick.AddListener(ContinueGame);
         }
     }
 
@@ -29,6 +29,8 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -58,8 +60,13 @@ public class Pause : MonoBehaviour
         }
     }
 
-    void RestartGame()
+    void ContinueGame()
     {
+        Time.timeScale = 1;
+        isPaused = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenuCanvas.enabled = false;
+
     }
 }
