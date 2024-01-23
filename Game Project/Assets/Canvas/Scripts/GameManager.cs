@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -107,4 +108,13 @@ public class GameManager : MonoBehaviour
             this.GreenBinText.text = this.TrashItems.Count(item => item.Type == BinType.GREEN).ToString();
         }
     }
+	public bool CheckMoneyAndSubstract(int amount)
+	{
+		if (this.PlayerBalance.Coins >= amount)
+		{
+			this.PlayerBalance.SubtractCoins(amount);
+			return true;
+		}
+		return false;
+	}
 }
