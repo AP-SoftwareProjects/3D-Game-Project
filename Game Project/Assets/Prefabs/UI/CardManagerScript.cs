@@ -117,9 +117,9 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = playerSpeedContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = playerSpeedContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}km/h";
+        currentlyText.text = $"Currently: {cardScript.value}";
         TextMeshProUGUI upgradeNewText = playerSpeedContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"+ {cardScript.upgradeValue}km/h";
+        upgradeNewText.text = $"+ {cardScript.upgradeValue}";
         TextMeshProUGUI buyText = playerSpeedContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
         buyText.text = $"{cardScript.priceValue}";
     }
