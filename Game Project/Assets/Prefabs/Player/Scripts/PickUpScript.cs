@@ -17,6 +17,8 @@ public class PickUpScript : MonoBehaviour
     public GameObject trashPickupCanvasPrefab;
     public GameObject timerCanvasPrefab;
 
+    public static int ITEM_BONUS_VALUE = 0;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -171,7 +173,7 @@ public class PickUpScript : MonoBehaviour
     void PickupTrash()
     {
         DestroyTrash();
-        GameManager.Instance.AddTrash(new(BinType.GREEN, 100));
+        GameManager.Instance.AddTrash(new(BinType.GREEN, 100 + ITEM_BONUS_VALUE));
     }
 
     void DestroyTrash()
