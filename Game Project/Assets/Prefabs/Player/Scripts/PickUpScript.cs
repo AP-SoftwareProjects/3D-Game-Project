@@ -179,7 +179,6 @@ public class PickUpScript : MonoBehaviour
     void DestroyTrash()
     {
         RandomGenerator.Counter--;
-        Debug.Log(RandomGenerator.Counter);
         Destroy(_seenTrash);
         _seenTrash = null;
     }

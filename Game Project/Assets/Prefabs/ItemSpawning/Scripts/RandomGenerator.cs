@@ -13,11 +13,14 @@ public class RandomGenerator : MonoBehaviour
     public static int MaxSpawnCounter = 10;
     public static int Counter = 0;
 
+    private GameObject player;
+
     // Use this for initialization
     void Start()
     {
         center = gameObject.transform.position;
         size = gameObject.transform.localScale;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private float nextActionTime = 0.0f;
@@ -37,10 +40,15 @@ public class RandomGenerator : MonoBehaviour
 
     public void SpawnGarbage()
     {
-        int randomIndex = Random.Range(0, myObjects.Length);
-        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
-        Counter++;
-        Debug.Log(Counter);
-        Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
+        float distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
+
+        float rangeThreshold = 30f;
+        if (distance < rangeThreshold)
+        {
+            int randomIndex = Random.Range(0, myObjects.Length);
+            Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+            Counter++;
+            Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
+        }
     }
 }
