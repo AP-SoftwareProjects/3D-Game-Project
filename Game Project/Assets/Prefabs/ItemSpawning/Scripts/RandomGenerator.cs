@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class RandomGenerator : MonoBehaviour
@@ -8,6 +10,9 @@ public class RandomGenerator : MonoBehaviour
     private Vector3 size;
     public float scale = 1f;
 
+    public static int MaxSpawnCounter = 10;
+    public static int Counter = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -16,14 +21,17 @@ public class RandomGenerator : MonoBehaviour
     }
 
     private float nextActionTime = 0.0f;
-    public float period = 0.1f;
+    public float period = 1f;
     // Update is called once per frame
     public void Update()
     {
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            SpawnGarbage();
+            if(Counter <= MaxSpawnCounter)
+            {
+                SpawnGarbage();
+            }
         }
     }
 
@@ -31,8 +39,8 @@ public class RandomGenerator : MonoBehaviour
     {
         int randomIndex = Random.Range(0, myObjects.Length);
         Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
-
-        //myObjects[randomIndex].transform.localScale *= scale;
+        Counter++;
+        Debug.Log(Counter);
         Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
     }
 }
