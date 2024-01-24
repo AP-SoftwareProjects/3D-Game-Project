@@ -11,7 +11,7 @@ public class RandomGenerator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        center = gameObject.transform.localPosition;
+        center = gameObject.transform.position;
         size = gameObject.transform.localScale;
     }
 

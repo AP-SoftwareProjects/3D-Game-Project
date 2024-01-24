@@ -15,8 +15,9 @@ public class DenyBuy : MonoBehaviour
 	public void Click()
     {
         Time.timeScale = 1;
-        Cursor.visible = false;
         canvasCar.enabled = false;
         canvasHud.enabled = true;
-	}
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }
