@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 9086284308245386643}
   - component: {fileID: 2479839659579982025}
   - component: {fileID: 2317927806629312020}
+  - component: {fileID: 5217979587595137808}
   m_Layer: 0
   m_Name: GebrokenGlas
   m_TagString: Trash
@@ -166,3 +167,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5515011364931717787, guid: cb106af49c649ef479a852f7a47f5f97, type: 3}
+--- !u!114 &5217979587595137808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167515639807560962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  Duration: 3
+  Price: 1

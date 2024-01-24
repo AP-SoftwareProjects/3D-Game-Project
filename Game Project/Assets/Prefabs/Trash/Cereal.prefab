@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7583038337048691883}
   - component: {fileID: 4993432844540504067}
   - component: {fileID: 4018591295008062642}
+  - component: {fileID: 3257819564235074813}
   m_Layer: 0
   m_Name: Cereal
   m_TagString: Trash
@@ -135,6 +136,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3257819564235074813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582527977914503376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  Duration: 5
+  Price: 20
 --- !u!1 &7522005389963079667
 GameObject:
   m_ObjectHideFlags: 0
