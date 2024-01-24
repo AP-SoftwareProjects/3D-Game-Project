@@ -4412,6 +4412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5178049743325988030}
+  - component: {fileID: -2093844406276754922}
   m_Layer: 0
   m_Name: StreetSellerStand prefab (4)
   m_TagString: Trash
@@ -4435,6 +4436,21 @@ Transform:
   - {fileID: 6511934298824993855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.26}
+--- !u!114 &-2093844406276754922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203932683070283153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Duration: 7
+  Price: 40
 --- !u!1 &6422229978513845333
 GameObject:
   m_ObjectHideFlags: 0
