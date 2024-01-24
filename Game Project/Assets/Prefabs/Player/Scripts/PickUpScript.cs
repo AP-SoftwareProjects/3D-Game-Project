@@ -178,9 +178,16 @@ public class PickUpScript : MonoBehaviour
 
     void PickupTrash()
     {
+        ItemInfo itemInfo = _seenTrash.GetComponent<ItemInfo>();
         DestroyTrash();
-
-        GameManager.Instance.AddTrash(new(BinType.GREEN, 100 + ITEM_BONUS_VALUE));
+        BinType binType = itemInfo.Type switch
+        {
+            BinTypes.GREEN => BinType.GREEN,
+            BinTypes.RED => BinType.RED,
+            BinTypes.ORANGE => BinType.ORANGE,
+            _ => BinType.GREEN
+        };
+        GameManager.Instance.AddTrash(new(binType, itemInfo.Price + ITEM_BONUS_VALUE));
 
         pickupSource.clip = pickupSound;
         pickupSource.volume = 0.08f;
