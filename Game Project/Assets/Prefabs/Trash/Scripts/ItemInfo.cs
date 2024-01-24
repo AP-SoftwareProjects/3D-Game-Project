@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ItemInfo : MonoBehaviour
 {
-    public BinTypes Type { get; set; }
-    public float Duration { get; set; }
-    public int Price { get; set; }
+    public BinTypes Type;
+    public float Duration;
+    public int Price;
 }
 public enum BinTypes
 {

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2389980990113132768}
   - component: {fileID: 8394952780726130720}
   - component: {fileID: 1720143664712198567}
+  - component: {fileID: 2157595322344287722}
   m_Layer: 0
   m_Name: Boekje
   m_TagString: Trash
@@ -172,3 +173,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2157595322344287722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570371395516239153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  Duration: 3
+  Price: 8

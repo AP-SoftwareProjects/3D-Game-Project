@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1410630900447329384}
   - component: {fileID: 8791020034136110335}
   - component: {fileID: 6158177075528759626}
-  - component: {fileID: 4191220422139981888}
+  - component: {fileID: -5593580685848731845}
   m_Layer: 0
   m_Name: Battery1
   m_TagString: Trash
@@ -189,7 +189,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: eef823a0d743d8942b54d878cc992b37, type: 3}
---- !u!114 &4191220422139981888
+--- !u!114 &-5593580685848731845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,3 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 2
+  Duration: 3
+  Price: 15
