@@ -6,6 +6,8 @@ public class RandomGenerator : MonoBehaviour
 {
     public GameObject[] myObjects;
 
+    private GameObject trashObject;
+
     private Vector3 center;
     private Vector3 size;
     public float scale = 1f;
@@ -21,10 +23,12 @@ public class RandomGenerator : MonoBehaviour
         center = gameObject.transform.position;
         size = gameObject.transform.localScale;
         player = GameObject.FindGameObjectWithTag("Player");
+        if(GameObject.Find("===== TRASH =====") == null)
+            trashObject = new GameObject("===== TRASH =====");
     }
 
     private float nextActionTime = 0.0f;
-    public float period = 1f;
+    public float period = 10f;
     // Update is called once per frame
     public void Update()
     {
@@ -48,7 +52,8 @@ public class RandomGenerator : MonoBehaviour
             int randomIndex = Random.Range(0, myObjects.Length);
             Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
             Counter++;
-            Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
+            GameObject trashToSpawn = Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
+            trashToSpawn.transform.SetParent(GameObject.Find("===== TRASH =====").transform);
         }
     }
 }
