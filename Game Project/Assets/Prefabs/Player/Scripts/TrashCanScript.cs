@@ -11,9 +11,14 @@ public class TrashCanScript : MonoBehaviour
 
     [SerializeField] private CinemachineVirtualCamera _camera;
     private Camera _normalCamera;
+
+    public AudioClip sellSound;
+    private AudioSource sellSource;
+
     void Start()
     {
         _normalCamera = _camera.GetComponent<Camera>();
+        sellSource = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
@@ -51,5 +56,9 @@ public class TrashCanScript : MonoBehaviour
 
         ParticleSystem spawnedParticles = Instantiate(particlePrefab, spawnPosition, spawnRotation, _currentTrashCan.transform);
         spawnedParticles.transform.SetParent(_currentTrashCan.transform);
+
+        sellSource.clip = sellSound;
+        sellSource.volume = 1f;
+        sellSource.Play();
     }
 }
