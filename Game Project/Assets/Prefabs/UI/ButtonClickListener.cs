@@ -8,9 +8,6 @@ public class ButtonClickListener : MonoBehaviour
     public ButtonActions buttonAction;
     private AudioSource audioSource;
 
-    private const float PLAYER_WALK_INCREASE = 0.1f;
-    private const float PLAYER_PICKUP_DECREASE = 0.1f;
-    private const float PLAYER_PICKUP_COOLDOWN_DECREASE = 0.05f;
     void Start()
     {
         button = GetComponent<Button>();
@@ -54,47 +51,65 @@ public class ButtonClickListener : MonoBehaviour
             case ButtonActions.TRASH_SPAWN_RATE:
                 foreach (var item in randomGenerator)
                 {
-                    if (item.period - 0.2f <= 0.2f)
+                    if (item.period - card.upgradeValue <= 0.2f)
                     {
                         item.period = 0.2f;
                     }
                     else
-                        item.period -= 0.2f;
+                    {
+                        card.value -= card.upgradeValue;
+                        item.period = card.value;
+                    }
                 }
                 break;
             case ButtonActions.TRASH_PRICE:
-                PickUpScript.ITEM_BONUS_VALUE += 10;
+                card.value += card.upgradeValue;
+                card.upgradeValue *= 1.1f;
+                PickUpScript.ITEM_BONUS_VALUE = (int) card.value;
                 break;
             case ButtonActions.TRASH_SIZE:
+                card.value += card.upgradeValue;
                 foreach (var item in randomGenerator)
                 {
                     //item.scale += 0.05f;
                 }
                 break;
             case ButtonActions.PLAYER_MOVEMENT_SPEED:
-                playerController.playerWalkSpeed += PLAYER_WALK_INCREASE;
-                playerController.playerSprintSpeed += PLAYER_WALK_INCREASE;
+                card.value += card.upgradeValue;
+                card.upgradeValue *= 1.1f;
+                playerController.playerWalkSpeed = card.value;
+                playerController.playerSprintSpeed = card.value + 1f;
                 break;
             case ButtonActions.TRASH_PICKUP_SPEED:
-                if (pickUpScript.pickupDuration - PLAYER_PICKUP_DECREASE <= 0.1f)
+                if (card.value - card.upgradeValue <= 0.1f)
                 {
-                    pickUpScript.pickupCooldown = 0.1f;
+                    pickUpScript.pickupDuration = 0.1f;
                 }
-                else pickUpScript.pickupDuration -= 0.1f;
+                else
+                {
+                    card.value -= card.upgradeValue;
+                    pickUpScript.pickupDuration = card.value;
+                }
                 break;
             case ButtonActions.TRASH_PICKUP_DELAY:
-                if (pickUpScript.pickupCooldown - PLAYER_PICKUP_COOLDOWN_DECREASE <= 0.1f)
+                if (card.value - card.upgradeValue <= 0.1f)
                 {
                     pickUpScript.pickupCooldown = 0.1f;
                 }
                 else
-                    pickUpScript.pickupCooldown -= 0.05f;
+                {
+                    card.value -= card.upgradeValue;
+                    pickUpScript.pickupCooldown = card.value;
+                }
                 break;
             case ButtonActions.INVENTORY_MAX_SIZE:
-                GameManager.Instance.MAX_INVENTORY_SIZE += 10;
+                card.value += card.upgradeValue;
+                GameManager.Instance.MAX_INVENTORY_SIZE = (int) card.value;
                 break;
         }
         audioSource.PlayOneShot(audioSource.clip);
+        card.level++;
+        CardManagerScript.Instance.UpdateValues();
     }
 }
 

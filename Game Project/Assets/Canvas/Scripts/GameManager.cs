@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public PlayerBalance PlayerBalance { get; }
 
-    public int MAX_INVENTORY_SIZE = 1;
+    public int MAX_INVENTORY_SIZE = 5;
     public List<TrashItem> TrashItems { get; }
 
     public Text CoinsText;

@@ -4,8 +4,8 @@ using UnityEngine;
 public class PickUpScript : MonoBehaviour
 {
     public float pickupRange = 4f;
-    public float pickupDuration = 3f;
-    public float pickupCooldown = 2f;
+    public float pickupDuration = 5f;
+    public float pickupCooldown = 4f;
     private float _pickupTimer = 0f;
     private float _cooldownTimer = 0f;
 
