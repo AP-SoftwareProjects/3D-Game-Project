@@ -16,6 +16,11 @@ public class ShowCanvas : MonoBehaviour
             this.gameObject.GetComponent<Canvas>().enabled = !this.gameObject.GetComponent<Canvas>().enabled;
             Cursor.visible = !Cursor.visible;
             Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
+
+            if (Cursor.visible)
+                Time.timeScale = 0f;
+            else
+                Time.timeScale = 1.0f;
         }
     }
 }

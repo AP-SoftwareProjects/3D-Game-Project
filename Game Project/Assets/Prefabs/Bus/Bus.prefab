@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0a1eeb1e28d604091e8f3fca9e117e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level3
+  levelName: EndMenu
   amountToPay: 200
   priceText: {fileID: 8127874490991171456}
 --- !u!114 &2623369958535743659

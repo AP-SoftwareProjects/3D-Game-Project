@@ -19,6 +19,13 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private PlayerManager playerManager;
 
+    //AUDIO
+    public AudioClip runningSound;
+    public AudioClip backgroundSound;
+
+    private AudioSource walkAudioSource;
+    private AudioSource runAudioSource;
+    private AudioSource backgroundAudioSource;
 
     private void Start()
     {
@@ -27,6 +34,15 @@ public class PlayerController : MonoBehaviour
         cameraTransform = Camera.main.transform;
         animator = GetComponent<Animator>();
         playerManager = PlayerManager.Instance;
+
+        walkAudioSource = gameObject.AddComponent<AudioSource>();
+        runAudioSource = gameObject.AddComponent<AudioSource>();
+
+        backgroundAudioSource = gameObject.AddComponent<AudioSource>();
+        backgroundAudioSource.clip = backgroundSound;
+        backgroundAudioSource.loop = true;
+        backgroundAudioSource.volume = 0.04f;
+        backgroundAudioSource.Play();
     }
 
     void Update()
@@ -65,17 +81,39 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("Sprinting", true);
                 animator.SetBool("Walking", false);
+
+                if (!runAudioSource.isPlaying)
+                {
+                    walkAudioSource.Stop();
+                    runAudioSource.clip = runningSound;
+                    runAudioSource.loop = true;
+                    runAudioSource.pitch = 1.6f;
+                    runAudioSource.volume = 0.05f;
+                    runAudioSource.Play();
+                }
             }
             else
             {
                 animator.SetBool("Sprinting", false);
                 animator.SetBool("Walking", true);
+
+                if (!walkAudioSource.isPlaying)
+                {
+                    runAudioSource.Stop();
+                    walkAudioSource.clip = runningSound;
+                    walkAudioSource.loop = true;
+                    walkAudioSource.pitch = 1.3f;
+                    walkAudioSource.volume = 0.05f;
+                    walkAudioSource.Play();
+                }
             }
         }
         else
         {
             animator.SetBool("Walking", false);
             animator.SetBool("Sprinting", false);
+            walkAudioSource.Stop();
+            runAudioSource.Stop();
         }
     }
 }
