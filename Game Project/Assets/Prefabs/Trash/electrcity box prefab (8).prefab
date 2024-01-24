@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7858370993842493994}
+  - component: {fileID: -7045176829813562058}
   m_Layer: 0
   m_Name: electrcity box prefab (8)
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 4060364358542615732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+--- !u!114 &-7045176829813562058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901179593093961749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Duration: 7
+  Price: 40
 --- !u!1 &7617506981889755630
 GameObject:
   m_ObjectHideFlags: 0

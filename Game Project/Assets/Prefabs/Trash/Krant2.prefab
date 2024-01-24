@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3079086813684931674}
   - component: {fileID: 2330219711535741528}
   - component: {fileID: 4076632975875830291}
+  - component: {fileID: -2253502974797570588}
   m_Layer: 0
   m_Name: Krant2
   m_TagString: Trash
@@ -168,3 +169,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2253502974797570588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499472636666406629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  Duration: 5
+  Price: 20

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4787801083185974699}
   - component: {fileID: 5283055958598650508}
   - component: {fileID: 8918778955370310095}
+  - component: {fileID: -6162233908499145343}
   m_Layer: 0
   m_Name: Cereal_2
   m_TagString: Trash
@@ -188,3 +189,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8cdf52bef3c7c874498d5def25a35bbf, type: 3}
+--- !u!114 &-6162233908499145343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728833553491477991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  Duration: 5
+  Price: 20

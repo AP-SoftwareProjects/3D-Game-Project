@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6110356923812277164}
   - component: {fileID: 2859447497398635655}
   - component: {fileID: 7413173558152103400}
+  - component: {fileID: -4506690597938701285}
   m_Layer: 0
   m_Name: BlikjeCola
   m_TagString: Trash
@@ -135,6 +136,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3327397293584083610, guid: cb106af49c649ef479a852f7a47f5f97, type: 3}
+--- !u!114 &-4506690597938701285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3591754056803179035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  Duration: 3
+  Price: 1
 --- !u!1 &6801645220440638581
 GameObject:
   m_ObjectHideFlags: 0

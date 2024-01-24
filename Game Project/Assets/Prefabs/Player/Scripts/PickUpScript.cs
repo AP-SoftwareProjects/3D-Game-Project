@@ -179,6 +179,7 @@ public class PickUpScript : MonoBehaviour
     void PickupTrash()
     {
         DestroyTrash();
+
         GameManager.Instance.AddTrash(new(BinType.GREEN, 100 + ITEM_BONUS_VALUE));
 
         pickupSource.clip = pickupSound;

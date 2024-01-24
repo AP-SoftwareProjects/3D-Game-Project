@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7849640593472052276}
   - component: {fileID: 9189071559615526436}
   - component: {fileID: 6830916981567274972}
+  - component: {fileID: -7877750439620807073}
   m_Layer: 0
   m_Name: BlikjeBonen
   m_TagString: Trash
@@ -139,6 +140,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7877750439620807073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349156344626044242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  Duration: 3
+  Price: 10
 --- !u!1 &6834141115144639690
 GameObject:
   m_ObjectHideFlags: 0

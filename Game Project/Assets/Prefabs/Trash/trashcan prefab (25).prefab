@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8949702982965160261}
+  - component: {fileID: -8473303044641122648}
   m_Layer: 0
   m_Name: trashcan prefab (25)
   m_TagString: Trash
@@ -137,3 +138,18 @@ Transform:
   - {fileID: 3949032005345754738}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 81.100006, y: 414.96, z: 381.85}
+--- !u!114 &-8473303044641122648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146463579298224652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Duration: 7
+  Price: 40

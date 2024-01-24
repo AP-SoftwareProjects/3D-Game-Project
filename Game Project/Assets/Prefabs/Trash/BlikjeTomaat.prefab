@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5202182610533651342}
   - component: {fileID: 5782904745202675702}
   - component: {fileID: 4981763977003737656}
+  - component: {fileID: -7754071080645967393}
   m_Layer: 0
   m_Name: BlikjeTomaat
   m_TagString: Trash
@@ -170,3 +171,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7754071080645967393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2412287694954576572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  Duration: 3
+  Price: 1
