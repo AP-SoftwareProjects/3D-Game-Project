@@ -9,10 +9,8 @@ public class FlashlightFollow : MonoBehaviour
     {
 		if (mainCamera != null)
 		{
-			// Set the spotlight position to be in front of the camera
 			transform.position = mainCamera.transform.position + mainCamera.transform.forward;
 
-			// Look at the camera
 			transform.LookAt(mainCamera.transform);
 		}
 	}
