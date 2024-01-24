@@ -19,10 +19,16 @@ public class PickUpScript : MonoBehaviour
 
     public static int ITEM_BONUS_VALUE = 0;
 
+    public AudioClip pickupSound;
+    private AudioSource pickupSource;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
         _normalCamera = _camera.GetComponent<Camera>();
+
+        pickupSource = gameObject.AddComponent<AudioSource>();
+
     }
 
     void Update()
@@ -174,6 +180,10 @@ public class PickUpScript : MonoBehaviour
     {
         DestroyTrash();
         GameManager.Instance.AddTrash(new(BinType.GREEN, 100 + ITEM_BONUS_VALUE));
+
+        pickupSource.clip = pickupSound;
+        pickupSource.volume = 0.08f;
+        pickupSource.Play();
     }
 
     void DestroyTrash()

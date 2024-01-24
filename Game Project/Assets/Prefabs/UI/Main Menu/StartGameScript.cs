@@ -8,6 +8,9 @@ public class StartGameScript : MonoBehaviour, IPointerClickHandler
     public GameObject loadingScreen;
     public string levelToLoad = "Level1";
 
+    public AudioClip loadingSound;
+    public AudioSource audioSource;
+
     private void LoadLevel()
     {
         if (!string.IsNullOrEmpty(levelToLoad))
@@ -32,7 +35,13 @@ public class StartGameScript : MonoBehaviour, IPointerClickHandler
             loadingScreen.SetActive(true);
             animator.SetBool("IsLoading", true);
         }
-        yield return new WaitForSeconds(1f);
+        if (audioSource != null && loadingSound != null)
+        {
+            audioSource.volume = 1;
+            audioSource.Stop();
+            audioSource.PlayOneShot(loadingSound);
+        }
+        yield return new WaitForSeconds(2f);
 
         LoadLevel();
     }
