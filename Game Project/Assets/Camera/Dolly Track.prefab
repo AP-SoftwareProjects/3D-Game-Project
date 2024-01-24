@@ -51,7 +51,7 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: -37.949005, y: 19.610088, z: 21.440552}
+  - position: {x: -142.02994, y: -70.16466, z: -54.382675}
     roll: 0
   - position: {x: -55.389374, y: 23.966518, z: -1.0141449}
     roll: 0
@@ -71,5 +71,5 @@ MonoBehaviour:
     roll: 0
   - position: {x: -31.9866, y: 19.968172, z: 14.577377}
     roll: 0
-  - position: {x: -1.5213928, y: 2.0918083, z: 1.0440674}
+  - position: {x: -1.5213928, y: -1.8691101, z: 1.0440674}
     roll: 0
