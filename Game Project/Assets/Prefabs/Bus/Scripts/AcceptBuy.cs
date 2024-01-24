@@ -6,12 +6,14 @@ public class AcceptBuy : MonoBehaviour
 {
 	public string levelName = "";
 	public int amountToPay;
+	private Canvas canvasHud;
 
 	[SerializeField] private TextMeshProUGUI priceText;
 
     private void Start()
     {
 		priceText.text = amountToPay.ToString();
+        canvasHud = GameObject.Find("HUD").GetComponentInChildren<Canvas>();
     }
 
     public void Click()
@@ -22,8 +24,10 @@ public class AcceptBuy : MonoBehaviour
 		{
 			SceneManager.LoadScene(levelName);
 			Time.timeScale = 1;
-			Cursor.visible = false;
-			return;
+            canvasHud.enabled = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            return;
 		}
 		return;
 	}
