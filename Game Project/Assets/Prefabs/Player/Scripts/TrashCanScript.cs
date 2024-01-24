@@ -48,6 +48,7 @@ public class TrashCanScript : MonoBehaviour
         {
             TrashItem trashItem = GameManager.Instance.TrashItems[i];
             GameManager.Instance.PlayerBalance.AddCoins(trashItem.Price);
+            GameManager.Instance.PlayerBalance.AddPoints(1);
         }
         GameManager.Instance.TrashItems.Clear();
 
