@@ -41,14 +41,8 @@ public class PlayerController : MonoBehaviour
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = direction.transform.forward * move.z + direction.transform.right * move.x;
         move.y = 0f;
-        Debug.Log(move.z);
-        Debug.Log(cameraTransform.forward);
-        Debug.Log(cameraTransform.right);
-        Debug.Log(move);
-        Debug.Log("----");
 
         // Set player rotation to match the camera rotation
-
         if (playerManager.IsPicking)
             move = Vector3.zero;
         else

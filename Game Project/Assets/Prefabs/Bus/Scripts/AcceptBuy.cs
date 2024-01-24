@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class AcceptBuy : MonoBehaviour
 {
 	public string levelName = "";
-	public Canvas canvas;
 	public int amountToPay;
 
 	[SerializeField] private TextMeshProUGUI priceText;

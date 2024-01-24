@@ -12,12 +12,14 @@ public class BusCanScript : MonoBehaviour
 	[SerializeField] private CinemachineVirtualCamera _camera;
 	private Camera _normalCamera;
 
-	public Canvas canvasCar = null;
-	public Canvas canvasHud = null;
+	private Canvas canvasCar = null;
+	private Canvas canvasHud = null;
 	void Start()
 	{
 		_normalCamera = _camera.GetComponent<Camera>();
-		GameManager.Instance.PlayerBalance.Coins = 100;
+
+		canvasHud = GameObject.Find("HUD").GetComponentInChildren<Canvas>();
+		canvasCar = GameObject.Find("Bus").GetComponentInChildren<Canvas>();
 	}
 
 	void Update()
