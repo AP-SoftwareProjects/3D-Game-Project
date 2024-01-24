@@ -11,7 +11,7 @@ public class RandomGenerator : MonoBehaviour
     private Vector3 center;
     private Vector3 size;
 
-    public static int MaxSpawnCounter = 10;
+    public static int MaxSpawnCounter = 50;
     public static int Counter = 0;
 
     private GameObject player;

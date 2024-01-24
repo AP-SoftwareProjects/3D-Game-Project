@@ -22,6 +22,7 @@ public class AcceptBuy : MonoBehaviour
 		//remove coins
 		if (GameManager.Instance.CheckMoneyAndSubstract(amountToPay))
 		{
+			RandomGenerator.Counter = 0;
 			SceneManager.LoadScene(levelName);
 			Time.timeScale = 1;
             canvasHud.enabled = true;

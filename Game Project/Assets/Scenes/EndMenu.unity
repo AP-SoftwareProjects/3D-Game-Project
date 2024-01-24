@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.026392264, g: 0.008074416, b: 0.000537553, a: 1}
+  m_IndirectSpecularColor: {r: 0.023867186, g: 0.007433743, b: 0.0004939407, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1515,14 +1515,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Planet Purge\n\r\nDeveloper:\r\nArtesis Plantijn Hogeschool Antwerpen\n\r\nGame
-    Directors:\r\n\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\r\nProgramming:\r\n\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\nArt and Design:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\nMusic and Sound Effects:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\nWriting and Narrative:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\nQuality Assurance:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\nSpecial Thanks:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
-    Nuyts\n\nAdditional Support:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan\nTimothy
+    Directors:\r\n\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan \xC7ak\u0131r\nTimothy
+    Nuyts\n\r\nProgramming:\r\n\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan
+    \xC7ak\u0131r\nTimothy Nuyts\n\nArt and Design:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique
+    Bataire\nEy\xFCpcan \xC7ak\u0131r\nTimothy Nuyts\n\nMusic and Sound Effects:\r\n\r\nAlex
+    Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan \xC7ak\u0131r\nTimothy Nuyts\n\nWriting
+    and Narrative:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan
+    \xC7ak\u0131r\nTimothy Nuyts\n\nQuality Assurance:\r\n\r\nAlex Gillard\nYelko
+    Henri\nEnrique Bataire\nEy\xFCpcan \xC7ak\u0131r\nTimothy Nuyts\n\nSpecial Thanks:\r\n\r\nAlex
+    Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan \xC7ak\u0131r\nTimothy Nuyts\n\nAdditional
+    Support:\r\n\r\nAlex Gillard\nYelko Henri\nEnrique Bataire\nEy\xFCpcan \xC7ak\u0131r\nTimothy
     Nuyts\n\nPowered by:\r\nUnity Game Engine\n\r\nCopyright \xA9 2024 Artesis Plantijn
     Hogeschool Antwerpen"
   m_isRightToLeft: 0
@@ -2740,6 +2742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 03709784938b51b44a0424d9aea7a1da, type: 3}
+  hoverSound: {fileID: 0}
 --- !u!114 &446704722
 MonoBehaviour:
   m_ObjectHideFlags: 0
