@@ -10,7 +10,6 @@ public class RandomGenerator : MonoBehaviour
 
     private Vector3 center;
     private Vector3 size;
-    public float scale = 1f;
 
     public static int MaxSpawnCounter = 10;
     public static int Counter = 0;
@@ -23,8 +22,13 @@ public class RandomGenerator : MonoBehaviour
         center = gameObject.transform.position;
         size = gameObject.transform.localScale;
         player = GameObject.FindGameObjectWithTag("Player");
-        if(GameObject.Find("===== TRASH =====") == null)
+        if (GameObject.Find("===== TRASH =====") == null)
+        {
             trashObject = new GameObject("===== TRASH =====");
+            trashObject = GameObject.Find("===== TRASH =====");
+        }
+        else
+            trashObject = GameObject.Find("===== TRASH =====");
     }
 
     private float nextActionTime = 0.0f;
@@ -53,7 +57,7 @@ public class RandomGenerator : MonoBehaviour
             Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
             Counter++;
             GameObject trashToSpawn = Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
-            trashToSpawn.transform.SetParent(GameObject.Find("===== TRASH =====").transform);
+            trashToSpawn.transform.SetParent(trashObject.transform);
         }
     }
 }
