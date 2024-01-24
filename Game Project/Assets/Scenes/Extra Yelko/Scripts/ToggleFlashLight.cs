@@ -18,12 +18,12 @@ public class ToggleFlashLight : MonoBehaviour
 		{
 			if (isToggled)
 			{
-				flashlight.intensity = Mathf.PingPong(Time.time, 0);
+				flashlight.intensity = 0;
 				isToggled = false;
 			}
 			else
 			{
-				flashlight.intensity = 600;
+				flashlight.intensity = 500;
 				isToggled = true;
 			}
 		}
