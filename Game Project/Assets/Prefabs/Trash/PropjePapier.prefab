@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0591b84a209c61d43a74ba22d284187f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
-  Duration: 5
-  Price: 20
+  Type: 0
+  Duration: 7
+  Price: 40
 --- !u!1 &8906234979348307857
 GameObject:
   m_ObjectHideFlags: 0
