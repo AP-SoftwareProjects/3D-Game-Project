@@ -7,7 +7,7 @@ public class DayNight : MonoBehaviour
 {
     [SerializeField] private Light sun;
     [SerializeField] private Light moon;
-    [SerializeField] private int rotationSpeed = 100;
+    [SerializeField] private float rotationSpeed = 0.1f;
 
     private void Update()
     {

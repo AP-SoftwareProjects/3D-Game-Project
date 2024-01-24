@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6881000798047228977}
+      - m_Target: {fileID: 8621531342361154387}
         m_TargetAssemblyTypeName: AcceptBuy, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
@@ -145,8 +145,8 @@ GameObject:
   - component: {fileID: 7642801909405288469}
   - component: {fileID: 4174783697063898826}
   - component: {fileID: 2491791011195207135}
-  - component: {fileID: 4294260408163310865}
-  - component: {fileID: 6881000798047228977}
+  - component: {fileID: 8621531342361154387}
+  - component: {fileID: 2623369958535743659}
   m_Layer: 0
   m_Name: CarCanvas
   m_TagString: Untagged
@@ -238,21 +238,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4294260408163310865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497649318020304229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696b1b60c4a124f4eb3b653cf42070aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasCar: {fileID: 7642801909405288469}
-  canvasHud: {fileID: 0}
---- !u!114 &6881000798047228977
+--- !u!114 &8621531342361154387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,10 +250,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0a1eeb1e28d604091e8f3fca9e117e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level3
-  canvas: {fileID: 7642801909405288469}
-  amountToPay: 100
+  levelName: EndMenu
+  amountToPay: 200
   priceText: {fileID: 8127874490991171456}
+--- !u!114 &2623369958535743659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497649318020304229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696b1b60c4a124f4eb3b653cf42070aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1843802446196029448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1066,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.5849056, g: 0.20140618, b: 0.20140618, a: 1}
     m_HighlightedColor: {r: 0.6698113, g: 0.24959949, b: 0.24959949, a: 1}
-    m_PressedColor: {r: 0.5566038, g: 0.18640977, b: 0.18640977, a: 1}
+    m_PressedColor: {r: 0.20000002, g: 0.20000002, b: 0.20000002, a: 1}
     m_SelectedColor: {r: 0.4811321, g: 0.16567284, b: 0.16567284, a: 1}
     m_DisabledColor: {r: 0.38679248, g: 0.13318796, b: 0.13318796, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1090,7 +1087,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4294260408163310865}
+      - m_Target: {fileID: 2623369958535743659}
         m_TargetAssemblyTypeName: DenyBuy, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
@@ -1246,7 +1243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806429096234832663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1261,15 +1258,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6006695063458687315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -311.4009, y: 2.98, z: 188.35896}
+  m_LocalRotation: {x: -0, y: 0.99880654, z: -0, w: -0.048842527}
+  m_LocalPosition: {x: -36.783142, y: 4.9963675, z: 43.410465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8265575100125411560}
   - {fileID: 3830948440388156794}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 185.599, z: 0}
 --- !u!1 &6084486899143854880
 GameObject:
   m_ObjectHideFlags: 0
