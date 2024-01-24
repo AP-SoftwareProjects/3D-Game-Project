@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomGenerator : MonoBehaviour
@@ -8,6 +6,7 @@ public class RandomGenerator : MonoBehaviour
 
     private Vector3 center;
     private Vector3 size;
+    public float scale = 1f;
 
     // Use this for initialization
     void Start()
@@ -34,6 +33,7 @@ public class RandomGenerator : MonoBehaviour
         int randomIndex = Random.Range(0, myObjects.Length);
         Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
 
+        //myObjects[randomIndex].transform.localScale *= scale;
         Instantiate(myObjects[randomIndex], pos, Quaternion.identity);
     }
 }
