@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         this.PlayerBalance = new();
         this.TrashItems = new();
+        
     }
 
 
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsInventoryFull()
     {
-        return this.MAX_INVENTORY_SIZE <= this.TrashItems.Count;
+        return this.TrashItems.Count >= this.MAX_INVENTORY_SIZE;
     }
     void Update()
     {

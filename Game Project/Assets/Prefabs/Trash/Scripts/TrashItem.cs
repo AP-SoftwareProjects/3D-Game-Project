@@ -6,9 +6,9 @@ public class TrashItem: MonoBehaviour
 {
     public BinType Type { get; set; }
     public float Duration { get; set; }
-    public int Price { get; set; }
+    public float Price { get; set; }
 
-    public TrashItem(BinType type, int price)
+    public TrashItem(BinType type, float price)
     {
         Type = type;
         Price = price;

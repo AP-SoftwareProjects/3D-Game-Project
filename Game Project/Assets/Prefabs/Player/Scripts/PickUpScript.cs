@@ -17,8 +17,6 @@ public class PickUpScript : MonoBehaviour
     public GameObject trashPickupCanvasPrefab;
     public GameObject timerCanvasPrefab;
 
-    public static int ITEM_BONUS_VALUE = 0;
-
     public AudioClip pickupSound;
     private AudioSource pickupSource;
 
@@ -29,6 +27,9 @@ public class PickUpScript : MonoBehaviour
 
         pickupSource = gameObject.AddComponent<AudioSource>();
 
+        UpgradeManager upgradeManager = UpgradeManager.Instance;
+        pickupDuration = upgradeManager.GetUpgrade(UpgradeType.PICKUP_SPEED).Value;
+        pickupCooldown = upgradeManager.GetUpgrade(UpgradeType.PICKUP_DELAY).Value;
     }
 
     void Update()
@@ -187,7 +188,7 @@ public class PickUpScript : MonoBehaviour
             BinTypes.ORANGE => BinType.ORANGE,
             _ => BinType.GREEN
         };
-        GameManager.Instance.AddTrash(new(binType, itemInfo.Price + ITEM_BONUS_VALUE));
+        GameManager.Instance.AddTrash(new(binType, itemInfo.Price + UpgradeManager.Instance.GetUpgrade(UpgradeType.COIN_BONUS).Value));
 
         pickupSource.clip = pickupSound;
         pickupSource.volume = 0.08f;

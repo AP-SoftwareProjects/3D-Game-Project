@@ -8,7 +8,7 @@ public class PlayerBalance
 
     }
 
-    public void AddCoins(int coins) => this.Coins += coins;
+    public void AddCoins(float coins) => this.Coins += coins;
     public void AddPoints(int points) => this.Points += points;
     public void SubtractCoins(float coins) => this.Coins -= coins;
     public void SubtractPoints(int points) => this.Points -= points;

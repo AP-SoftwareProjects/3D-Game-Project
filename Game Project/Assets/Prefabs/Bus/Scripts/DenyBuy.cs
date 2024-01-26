@@ -20,6 +20,5 @@ public class DenyBuy : MonoBehaviour
         Time.timeScale = 1;
         canvasCar.enabled = false;
         canvasHud.enabled = true;
-        Debug.Log(canvasHud);
     }
 }

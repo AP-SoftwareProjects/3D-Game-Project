@@ -16,16 +16,11 @@ public class SpotLightScript : MonoBehaviour
     void Start()
     {
         if (flickeringLight == null)
-        {
-            flickeringLight = GetComponent<Light>(); // Try to get Light component from the same GameObject
-        }
+            flickeringLight = GetComponent<Light>();
 
         if (flickeringLight == null)
-        {
             Debug.LogError("Light component not found. Please assign a Light component to the script.");
-        }
 
-        // Set the start delay timer
         delayTimer = startDelay;
     }
 

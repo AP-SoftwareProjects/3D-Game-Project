@@ -15,12 +15,8 @@ public class WaitToAppearButton : MonoBehaviour
 	}
     IEnumerator Waiter()
     {
-		Debug.Log("Deactivating GameObject");
 		button.gameObject.SetActive(false);
-
 		yield return new WaitForSeconds(33);
-
-		Debug.Log("Activating GameObject after 2 seconds");
 		button.gameObject.SetActive(true);
 	}
 }

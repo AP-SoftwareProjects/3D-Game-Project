@@ -14,13 +14,9 @@ public class StartGameScript : MonoBehaviour, IPointerClickHandler
     private void LoadLevel()
     {
         if (!string.IsNullOrEmpty(levelToLoad))
-        {
             SceneManager.LoadScene(levelToLoad);
-        }
         else
-        {
             Debug.LogError("Level name is not specified in HoverTextScript.");
-        }
     }
 
     public void OnPointerClick(PointerEventData eventData)

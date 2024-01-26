@@ -29,6 +29,8 @@ public class RandomGenerator : MonoBehaviour
         }
         else
             trashObject = GameObject.Find("===== TRASH =====");
+
+        this.period = UpgradeManager.Instance.GetUpgrade(UpgradeType.SPAWN_RATE).Value;
     }
 
     private float nextActionTime = 0.0f;
