@@ -9,15 +9,17 @@ public class DenyBuy : MonoBehaviour
 
 	public void Start()
 	{
-        canvasHud = GameObject.Find("HUD").GetComponentInChildren<Canvas>();
-        canvasCar = GameObject.Find("Bus").GetComponentInChildren<Canvas>();
 	}
 	public void Click()
     {
+        canvasCar = GameObject.Find("Bus").GetComponentInChildren<Canvas>();
+        canvasHud = GameObject.Find("HUD").GetComponentInChildren<Canvas>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         Time.timeScale = 1;
         canvasCar.enabled = false;
         canvasHud.enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log(canvasHud);
     }
 }

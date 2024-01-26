@@ -4,7 +4,6 @@ public class ButtonClickListener : MonoBehaviour
 {
     private Button button;
     private CardScript card;
-    private int price;
     public ButtonActions buttonAction;
     private AudioSource audioSource;
 
@@ -14,7 +13,6 @@ public class ButtonClickListener : MonoBehaviour
         card = transform.parent.GetComponent<CardScript>();
         audioSource = GetComponent<AudioSource>();
 
-        price = card.priceValue;
         if (button != null)
         {
             button.onClick.AddListener(OnClick);
@@ -42,9 +40,11 @@ public class ButtonClickListener : MonoBehaviour
                 break;
         }
 
-        if (GameManager.Instance.PlayerBalance.Coins >= price)
-            GameManager.Instance.PlayerBalance.SubtractCoins(price);
+        if (GameManager.Instance.PlayerBalance.Coins >= card.priceValue)
+            GameManager.Instance.PlayerBalance.SubtractCoins(card.priceValue);
         else return;
+
+        card.priceValue *= 1.5f;
 
         switch (buttonAction)
         {
@@ -64,7 +64,7 @@ public class ButtonClickListener : MonoBehaviour
                 break;
             case ButtonActions.TRASH_PRICE:
                 card.value += card.upgradeValue;
-                card.upgradeValue *= 1.1f;
+                card.upgradeValue *= 1.05f;
                 PickUpScript.ITEM_BONUS_VALUE = (int) card.value;
                 break;
             case ButtonActions.TRASH_SIZE:

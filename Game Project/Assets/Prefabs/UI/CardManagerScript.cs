@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -61,11 +62,11 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = spawnRateContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = spawnRateContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}s";
+        currentlyText.text = $"Currently: {Math.Round(cardScript.value, 1)}s";
         TextMeshProUGUI upgradeNewText = spawnRateContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"- {cardScript.upgradeValue}s";
+        upgradeNewText.text = $"- {Math.Round(cardScript.upgradeValue, 1)}s";
         TextMeshProUGUI buyText = spawnRateContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}s";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
     private void LoadInventorySize()
     {
@@ -75,11 +76,11 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = inventorySizeContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = inventorySizeContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}";
+        currentlyText.text = $"Currently: {Math.Round(cardScript.value, 1)}";
         TextMeshProUGUI upgradeNewText = inventorySizeContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"+ {cardScript.upgradeValue}";
+        upgradeNewText.text = $"+ {Math.Round(cardScript.upgradeValue)}";
         TextMeshProUGUI buyText = inventorySizeContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
     private void LoadTrashPrice()
     {
@@ -89,11 +90,11 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = trashPriceContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = trashPriceContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: €{cardScript.value}";
+        currentlyText.text = $"Currently: €{Math.Round(cardScript.value, 1)}";
         TextMeshProUGUI upgradeNewText = trashPriceContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"+ €{cardScript.upgradeValue}";
+        upgradeNewText.text = $"+ €{Math.Round(cardScript.upgradeValue)}";
         TextMeshProUGUI buyText = trashPriceContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
     private void LoadTrashSize()
     {
@@ -103,11 +104,11 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = trashSizeContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = trashSizeContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}";
+        currentlyText.text = $"Currently: {Math.Round(cardScript.value, 1)}";
         TextMeshProUGUI upgradeNewText = trashSizeContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"+ {cardScript.upgradeValue}";
+        upgradeNewText.text = $"+ {Math.Round(cardScript.upgradeValue, 1)}";
         TextMeshProUGUI buyText = trashSizeContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
     private void LoadPlayerSpeed()
     {
@@ -117,11 +118,11 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = playerSpeedContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = playerSpeedContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}";
+        currentlyText.text = $"Currently: {Math.Round(cardScript.value, 1)}";
         TextMeshProUGUI upgradeNewText = playerSpeedContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"+ {cardScript.upgradeValue}";
+        upgradeNewText.text = $"+ {Math.Round(cardScript.upgradeValue, 1)}";
         TextMeshProUGUI buyText = playerSpeedContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
     private void LoadPickupSpeed()
     {
@@ -131,11 +132,11 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = pickupSpeedContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = pickupSpeedContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}s";
+        currentlyText.text = $"Currently: {Math.Round(cardScript.value, 1)}s";
         TextMeshProUGUI upgradeNewText = pickupSpeedContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"- {cardScript.upgradeValue}s";
+        upgradeNewText.text = $"- {Math.Round(cardScript.upgradeValue, 1)}s";
         TextMeshProUGUI buyText = pickupSpeedContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
     private void LoadPickupDelay()
     {
@@ -145,10 +146,10 @@ public class CardManagerScript : MonoBehaviour
         CardScript cardScript = pickupDelayContent.GetComponent<CardScript>();
         level.text = $"Level {cardScript.level}";
         TextMeshProUGUI currentlyText = pickupDelayContent.transform.Find("Current Upgrade Text").Find("Currently Text").GetComponent<TextMeshProUGUI>();
-        currentlyText.text = $"Currently: {cardScript.value}s";
+        currentlyText.text = $"Currently: {Math.Round(cardScript.value, 1)}s";
         TextMeshProUGUI upgradeNewText = pickupDelayContent.transform.Find("Current Upgrade Text").Find("Value Text").GetComponent<TextMeshProUGUI>();
-        upgradeNewText.text = $"- {cardScript.upgradeValue}s";
+        upgradeNewText.text = $"- {Math.Round(cardScript.upgradeValue, 1)}s";
         TextMeshProUGUI buyText = pickupDelayContent.transform.Find("Buy Button").Find("Buy Text").GetComponent<TextMeshProUGUI>();
-        buyText.text = $"{cardScript.priceValue}s";
+        buyText.text = $"{Math.Round(cardScript.priceValue)}";
     }
 }
