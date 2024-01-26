@@ -46,7 +46,7 @@ public class ButtonClickListener : MonoBehaviour
             GameManager.Instance.PlayerBalance.SubtractCoins(upgrade.PriceValue);
         else return;
 
-        upgrade.PriceValue *= 1.5f;
+        upgrade.PriceValue *= 1.15f;
 
         switch (buttonAction)
         {

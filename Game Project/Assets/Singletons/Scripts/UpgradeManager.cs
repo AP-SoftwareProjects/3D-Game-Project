@@ -16,8 +16,8 @@ public class UpgradeManager : MonoBehaviour
         AddUpgrade(UpgradeType.COIN_BONUS, new Upgrade("Coins Bonus", 300, 1, 0, 20f));
         AddUpgrade(UpgradeType.TRASH_SIZE, new Upgrade("Trash Size", 200, 1, 1, 0.1f));
         AddUpgrade(UpgradeType.PLAYER_SPEED, new Upgrade("Player Speed", 300, 1, 3.2f, 0.1f));
-        AddUpgrade(UpgradeType.PICKUP_SPEED, new Upgrade("Pickup Speed", 300, 1, 5, 0.2f));
-        AddUpgrade(UpgradeType.PICKUP_DELAY, new Upgrade("Pickup Delay", 200, 1, 3, 0.3f));
+        AddUpgrade(UpgradeType.PICKUP_SPEED, new Upgrade("Pickup Speed", 300, 1, 3, 0.2f));
+        AddUpgrade(UpgradeType.PICKUP_DELAY, new Upgrade("Pickup Delay", 200, 1, 2, 0.3f));
 
         GameManager.Instance.MAX_INVENTORY_SIZE = (int)GetUpgrade(UpgradeType.INVENTORY_SIZE).Value;
     }
